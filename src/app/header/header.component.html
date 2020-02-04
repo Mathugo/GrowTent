@@ -1,0 +1,7 @@
+<div class="header">
+  <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+  <mat-menu #menu="matMenu">
+    <button routerLink="/home" routerLinkActive="active" mat-menu-item>Home</button>
+    <button routerLink="/signin" routerLinkActive="active" mat-menu-item>SignIn</button>
+  </mat-menu>
+</div>
