@@ -7,7 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { SigninComponent } from './signin/signin.component';
 import { HeaderComponent } from './header/header.component';
-import {MatButtonModule, MatMenuModule, MatSliderModule} from '@angular/material';
+import {MatButtonModule, MatExpansionModule, MatFormFieldModule, MatInputModule, MatMenuModule, MatSliderModule} from '@angular/material';
 import {MatIconModule} from '@angular/material/icon';
 import { Router } from '@angular/router';
 import { GraphComponent } from './graph/graph.component';
@@ -15,6 +15,7 @@ import { SettingsComponent } from './settings/settings.component';
 import { TimelapseComponent } from './timelapse/timelapse.component';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatCardModule} from '@angular/material/card';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 
 const appRoutes: Routes = [
@@ -54,6 +55,11 @@ const appRoutes: Routes = [
     MatProgressBarModule,
     MatCardModule,
     MatSliderModule,
+    MatExpansionModule,
+    MatFormFieldModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

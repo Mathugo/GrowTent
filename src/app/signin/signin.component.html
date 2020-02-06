@@ -1,2 +1,28 @@
-<p>SIGNIN PAGE</p>
-
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Signin</mat-card-title>
+    <mat-card-subtitle>Please fill out the form to signin into GrowTent</mat-card-subtitle>
+    <mat-icon id="https">face</mat-icon>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="email">
+      <mat-icon id="login_icon">account_circle</mat-icon>
+      <mat-form-field class="email_field">
+        <input matInput type="text" placeholder="Email" [(ngModel)]="value">
+        <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+          <mat-icon>close</mat-icon>
+        </button>
+    </mat-form-field>
+    </div>
+    <div class="password">
+      <mat-icon id="pwd_icon">lock</mat-icon>
+      <mat-form-field class="password_field">
+        <input matInput type="password" placeholder="Password" [(ngModel)]="value_password">
+        <button mat-button *ngIf="value_password" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+  </mat-card-content>
+  <button id="submit" mat-raised-button>Submit</button>
+</mat-card>

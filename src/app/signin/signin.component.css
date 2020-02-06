@@ -1,0 +1,54 @@
+mat-card{
+  position: relative;
+  left: 25vw;
+  top: 10vh;
+  width: 55vw;
+  height: 40vh;
+}
+
+mat-card-header{
+  text-align: center;
+  position: relative;
+  margin-left: 14vw;
+  margin-right: 10vw;
+  margin-top: 1vh;
+}
+#https{
+  position: relative;
+  left: 13vw;
+  margin-top: 1vh;
+  margin-right: 1vw;
+}
+#login_icon{
+  position: relative;
+  top: 2vh;
+  margin-right: 1vw;
+}
+#pwd_icon{
+  position: relative;
+  top: 2vh;
+  margin-right: 1vw;
+}
+#submit{
+  position: relative;
+  left: 23vw;
+  size: auto;
+  font-size: 100%;
+  margin-bottom: 2%;
+}
+.email{
+  position: relative;
+  left: 13vw;
+  margin-right: 2vw;
+}
+.email_field{
+  width: 22vw;
+}
+.password{
+  position: relative;
+  left: 13vw;
+  margin-right: 2vw;
+}
+.password_field{
+  width: 22vw;
+}
