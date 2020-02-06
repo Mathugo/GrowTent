@@ -1,0 +1,15 @@
+<mat-card class="home-card">
+  <mat-card-header>
+    <mat-icon>info</mat-icon>
+    <mat-card-title>Basic informations about your plants</mat-card-title>
+    <mat-card-subtitle>On this page you will catch humidity, temperature level and current fan speed</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+        <p>Humidity {{humidity}}%</p>
+        <mat-progress-bar class="humidity" mode="determinate" value={{humidity}}></mat-progress-bar>
+      <p>Temperature {{temp}}°C</p>
+      <mat-progress-bar class="temp" mode="determinate" value={{temp}}></mat-progress-bar>
+    <p>Current Speed</p>
+    <mat-slider class="slider_pwm" thumbLabel [displayWith]="pourcentage" color="primary" min="1" max="100" step="1" value={{pwm}} ></mat-slider>
+  </mat-card-content>
+</mat-card>

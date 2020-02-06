@@ -6,9 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
+  humidity = 70;
+  temp = 25;
+  pwm = 40;
   constructor() { }
 
+  pourcentage(value: number)
+  {
+    return value+"%";
+  }
   ngOnInit() {
   }
 

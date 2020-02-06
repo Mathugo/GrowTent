@@ -1,0 +1,42 @@
+mat-card-content {
+  position: relative;
+  margin: 2%;
+}
+.humidity{
+  width: 50%;
+  margin: 2%;
+}
+.temp
+{
+  width: 50%;
+  margin: 2%;
+}
+.slider_pwm{
+  margin: 1%;
+}
+p{
+  margin: 1%;
+}
+.home-card
+{
+  position: relative;
+  left: 20vw;
+  top: 5vh;
+  width: 60vw;
+  height: 70vh;
+}
+.mat-card-header{
+  text-align: center;
+  position: relative;
+  margin-left: 10vw;
+  margin-right: 10vw;
+  margin-top: 1vh;
+}
+.mat-icon{
+  margin-top: 1vh;
+  margin-right: 1vw;
+  position: relative;
+  left: 10vw;
+}
+
+
