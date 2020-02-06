@@ -31,10 +31,12 @@ mat-card-header{
 }
 #submit{
   position: relative;
-  left: 23vw;
+  left: 24vw;
+  top: 1vh;
   size: auto;
-  font-size: 100%;
-  margin-bottom: 2%;
+  width: 7vw;
+  height: 7vh;
+  margin-bottom: 1vh;
 }
 .email{
   position: relative;

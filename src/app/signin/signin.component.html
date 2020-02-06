@@ -8,8 +8,8 @@
     <div class="email">
       <mat-icon id="login_icon">account_circle</mat-icon>
       <mat-form-field class="email_field">
-        <input matInput type="text" placeholder="Email" [(ngModel)]="value">
-        <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+        <input matInput type="text" placeholder="Email" [(ngModel)]="form.login">
+        <button mat-button *ngIf="form.login" matSuffix mat-icon-button aria-label="Clear" (click)="form.login=''">
           <mat-icon>close</mat-icon>
         </button>
     </mat-form-field>
@@ -17,12 +17,12 @@
     <div class="password">
       <mat-icon id="pwd_icon">lock</mat-icon>
       <mat-form-field class="password_field">
-        <input matInput type="password" placeholder="Password" [(ngModel)]="value_password">
-        <button mat-button *ngIf="value_password" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+        <input matInput type="password" placeholder="Password" [(ngModel)]="form.password">
+        <button mat-button *ngIf="form.password" matSuffix mat-icon-button aria-label="Clear" (click)="form.password=''">
           <mat-icon>close</mat-icon>
         </button>
       </mat-form-field>
     </div>
   </mat-card-content>
-  <button id="submit" mat-raised-button>Submit</button>
+  <button id="submit" mat-raised-button (click)=onClick()>Submit</button>
 </mat-card>

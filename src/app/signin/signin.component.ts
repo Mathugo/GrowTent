@@ -7,11 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./signin.component.css']
 })
 export class SigninComponent implements OnInit {
-  value = '';
-  value_password = '';
-
+  form = {
+    login: '',
+    password: ''
+  }
   constructor() { }
-
+  onClick()
+  {
+    console.log("Login : "+this.form.login+ "Password : "+this.form.password);
+  }
   ngOnInit() {
   }
 
