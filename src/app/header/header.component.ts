@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute, Router, UrlSegment} from '@angular/router';
+import { Location } from "@angular/common";
 
 @Component({
   selector: 'app-header',
@@ -7,7 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  route: string;
+
+  constructor(location: Location, router: Router) {
+    router.events.subscribe(val => {
+      if (location.path() !== "") {
+        this.route = location.path();
+        this.route = this.route.replace("/","");
+      } else {
+        this.route = "Home";
+      }
+    });
+  }
 
   ngOnInit() {
   }
