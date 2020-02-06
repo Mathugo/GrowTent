@@ -8,11 +8,19 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { SigninComponent } from './signin/signin.component';
 import { HeaderComponent } from './header/header.component';
 import {MatButtonModule, MatMenuModule} from '@angular/material';
+import {MatIconModule} from '@angular/material/icon';
+import { Router } from '@angular/router';
+import { GraphComponent } from './graph/graph.component';
+import { SettingsComponent } from './settings/settings.component';
+import { TimelapseComponent } from './timelapse/timelapse.component';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'signin', component: SigninComponent},
   { path: '', redirectTo: '/signin', pathMatch: 'full'},
+  { path: 'graph', component: GraphComponent},
+  { path: 'settings', component: SettingsComponent},
+  { path: 'timelapse', component: TimelapseComponent},
   { path: '**', component: PageNotFoundComponent },
 
 ];
@@ -23,8 +31,12 @@ const appRoutes: Routes = [
     HomeComponent,
     PageNotFoundComponent,
     SigninComponent,
-    HeaderComponent
+    HeaderComponent,
+    GraphComponent,
+    SettingsComponent,
+    TimelapseComponent
   ],
+  exports: [RouterModule],
   imports: [
     RouterModule.forRoot(
       appRoutes,
@@ -34,6 +46,7 @@ const appRoutes: Routes = [
     BrowserAnimationsModule,
     MatMenuModule,
     MatButtonModule,
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
