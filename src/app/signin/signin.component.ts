@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import * as firebase from 'firebase';
 
 
 @Component({
@@ -8,13 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SigninComponent implements OnInit {
   form = {
-    login: '',
+    email: '',
     password: ''
   }
   constructor() { }
-  onClick()
-  {
-    console.log("Login : "+this.form.login+ "Password : "+this.form.password);
+  onClick() {
+    console.log("Login : "+this.form.email+ "Password : "+this.form.password);
+    firebase.auth().signInWithEmailAndPassword(this.form.email, this.form.password).catch(function(error) {
+      // Handle Errors here.
+      let errorCode = error.code;
+      let errorMessage = error.message;
+      console.log("Error code : "+error.code);
+    });
+
   }
   ngOnInit() {
   }

@@ -18,6 +18,10 @@ import {MatCardModule} from '@angular/material/card';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+
+
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent,
   data: {animation: 'Home'}},
@@ -59,7 +63,7 @@ const appRoutes: Routes = [
     MatFormFieldModule,
     MatInputModule,
     ReactiveFormsModule,
-    FormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
