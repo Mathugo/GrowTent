@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router, UrlSegment} from '@angular/router';
-import { Location } from "@angular/common";
+import { Location } from '@angular/common';
+import {AuthServiceService} from '../service/auth-service.service';
 
 @Component({
   selector: 'app-header',
@@ -11,7 +12,7 @@ export class HeaderComponent implements OnInit {
 
   route: string;
 
-  constructor(location: Location, router: Router) {
+  constructor(location: Location, router: Router, public authService: AuthServiceService) {
     router.events.subscribe(val => {
       if (location.path() !== "") {
         this.route = location.path();

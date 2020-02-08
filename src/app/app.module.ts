@@ -7,7 +7,17 @@ import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { SigninComponent } from './signin/signin.component';
 import { HeaderComponent } from './header/header.component';
-import {MatButtonModule, MatExpansionModule, MatFormFieldModule, MatInputModule, MatMenuModule, MatSliderModule} from '@angular/material';
+import { AuthServiceService} from './service/auth-service.service';
+
+import {
+  MatButtonModule,
+  MatExpansionModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatMenuModule,
+  MatSliderModule, MatSnackBarModule,
+  MatTooltipModule
+} from '@angular/material';
 import {MatIconModule} from '@angular/material/icon';
 import { Router } from '@angular/router';
 import { GraphComponent } from './graph/graph.component';
@@ -16,10 +26,6 @@ import { TimelapseComponent } from './timelapse/timelapse.component';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatCardModule} from '@angular/material/card';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-
-
-import { AngularFireModule } from '@angular/fire';
-import { AngularFireDatabaseModule } from '@angular/fire/database';
 
 
 const appRoutes: Routes = [
@@ -63,9 +69,12 @@ const appRoutes: Routes = [
     MatFormFieldModule,
     MatInputModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    MatTooltipModule,
+    MatSnackBarModule,
+
   ],
-  providers: [],
+  providers: [AuthServiceService],
   bootstrap: [AppComponent]
 })
 

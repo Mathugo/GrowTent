@@ -1,6 +1,6 @@
 mat-card{
   position: relative;
-  left: 25vw;
+  left: 23vw;
   top: 10vh;
   width: 55vw;
   height: 40vh;
@@ -36,7 +36,9 @@ mat-card-header{
   size: auto;
   width: 7vw;
   height: 7vh;
-  margin-bottom: 1vh;
+  text-align: center;
+  box-sizing: border-box;
+  margin:0 0.3em 0.3em 0;
 }
 .email{
   position: relative;
