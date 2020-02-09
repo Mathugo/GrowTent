@@ -10,7 +10,7 @@ import { HeaderComponent } from './header/header.component';
 import { AuthServiceService} from './service/auth-service.service';
 
 import {
-  MatButtonModule,
+  MatButtonModule, MatDividerModule,
   MatExpansionModule,
   MatFormFieldModule,
   MatInputModule,
@@ -26,16 +26,18 @@ import { TimelapseComponent } from './timelapse/timelapse.component';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatCardModule} from '@angular/material/card';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {AuthGuard} from './auth/auth.guard';
+import {canActivate} from '@angular/fire/auth-guard';
 
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent,
-  data: {animation: 'Home'}},
+  data: {animation: 'Home'}, canActivate: [AuthGuard]},
   { path: 'signin', component: SigninComponent},
   { path: '', redirectTo: '/signin', pathMatch: 'full'},
-  { path: 'graph', component: GraphComponent},
-  { path: 'settings', component: SettingsComponent},
-  { path: 'timelapse', component: TimelapseComponent},
+  { path: 'graph', component: GraphComponent, canActivate: [AuthGuard]},
+  { path: 'settings', component: SettingsComponent, canActivate: [AuthGuard]},
+  { path: 'timelapse', component: TimelapseComponent, canActivate: [AuthGuard]},
   { path: '**', component: PageNotFoundComponent },
 
 ];
@@ -72,7 +74,7 @@ const appRoutes: Routes = [
     FormsModule,
     MatTooltipModule,
     MatSnackBarModule,
-
+    MatDividerModule,
   ],
   providers: [AuthServiceService],
   bootstrap: [AppComponent]

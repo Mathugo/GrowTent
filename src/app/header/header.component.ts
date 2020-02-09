@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router, UrlSegment} from '@angular/router';
 import { Location } from '@angular/common';
 import {AuthServiceService} from '../service/auth-service.service';
+import * as firebase from 'firebase/app';
 
 @Component({
   selector: 'app-header',
@@ -9,7 +10,6 @@ import {AuthServiceService} from '../service/auth-service.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
   route: string;
 
   constructor(location: Location, router: Router, public authService: AuthServiceService) {

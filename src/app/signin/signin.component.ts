@@ -29,23 +29,17 @@ export class SigninComponent implements OnInit {
     if (this.form.email === '' || this.form.password === '') {
       this.openSnackBar('Please fill out the form', 'Close');
     } else {
-      this.authService.login(this.form.email, this.form.password);
-      timer(1000).subscribe(x => {
-        if (this.authService.getCurrentUser()){
-          this.transition();
-        } else{
+      firebase.auth().signInWithEmailAndPassword(this.form.email, this.form.password)
+        .then(value => {
+          this.authService.isLogged = true;
+          this.router.navigate(['home']);
+        })
+        .catch(err => {
           this.openSnackBar("Error please try again", "Close");
-        }
-      })
-
+          this.form.email = this.form.password = "";
+        });
     }
   }
-
-  transition() {
-    console.log('TRANSITION');
-    this.router.navigate(['home']);
-  }
-
   ngOnInit() {
   }
 

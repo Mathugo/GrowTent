@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthServiceService} from '../service/auth-service.service';
 
 @Component({
   selector: 'app-home',
@@ -9,7 +10,8 @@ export class HomeComponent implements OnInit {
   humidity = 70;
   temp = 25;
   pwm = 40;
-  constructor() { }
+  constructor() {
+  }
 
   pourcentage(value: number)
   {
