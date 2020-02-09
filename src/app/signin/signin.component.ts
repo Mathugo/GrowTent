@@ -15,7 +15,7 @@ export class SigninComponent implements OnInit {
     email: '',
     password: ''
   };
-
+  loading: boolean;
   constructor(private _snackBar: MatSnackBar, public authService: AuthServiceService, private router: Router) {
   }
 
@@ -29,14 +29,17 @@ export class SigninComponent implements OnInit {
     if (this.form.email === '' || this.form.password === '') {
       this.openSnackBar('Please fill out the form', 'Close');
     } else {
+      this.loading = true;
       firebase.auth().signInWithEmailAndPassword(this.form.email, this.form.password)
         .then(value => {
           this.authService.isLogged = true;
           this.router.navigate(['home']);
+          this.loading = false;
         })
         .catch(err => {
           this.openSnackBar("Error please try again", "Close");
           this.form.email = this.form.password = "";
+          this.loading = false;
         });
     }
   }

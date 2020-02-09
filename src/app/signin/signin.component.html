@@ -27,4 +27,13 @@
   <button id="submit" mat-raised-button matTooltip="Log you !" (click)=Login()>Submit</button>
 </mat-card>
 
+<div class="gooey" *ngIf="loading">
+  <span class="dot"></span>
+  <div class="dots">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
 
