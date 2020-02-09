@@ -1,0 +1,26 @@
+
+mat-card{
+  width: 30vw;
+  height: 20vh;
+  position: relative;
+  left: 30vw;
+  background-color: white;
+  display: inline-block;
+  margin: 1%;
+}
+.card-webcam-lastweek{
+  position: relative;
+  left: 50vh;
+}
+.card-webcam{
+  position: relative;
+  left: 30vh;
+}
+mat-card-content{
+  color: white;
+}
+
+mat-divider{
+  margin: 5%;
+}
+

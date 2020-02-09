@@ -1,10 +1,11 @@
 
-<div *ngIf="authService.isLogged" class="header">
+<!-- <div *ngIf="authService.isLogged" class="header"> -->
+<div class="header">
   <mat-icon *ngIf="route=='home'" class="icon_header">home</mat-icon>
   <mat-icon *ngIf="route=='graph'" class="icon_header">show_chart</mat-icon>
   <mat-icon *ngIf="route=='settings'" class="icon_header">settings</mat-icon>
   <mat-icon *ngIf="route=='timelapse'" class="icon_header">movie_creation</mat-icon>
-
+  <mat-icon *ngIf="route=='webcam'" class="icon_header">insert_photo</mat-icon>
   <button mat-button [matMenuTriggerFor]="menu">
     <span class="page">{{route | uppercase}}</span>
    <!-- <mat-icon md-light>more_vert</mat-icon> -->
@@ -23,6 +24,10 @@
     <button *ngIf="route!='timelapse'" mat-menu-item routerLink="/timelapse" routerLinkActive="active">
       <mat-icon>movie_creation</mat-icon>
       <span>Timelapse</span>
+    </button>
+    <button *ngIf="route!='webcam'"mat-menu-item routerLink="/webcam" routerLinkActive="active">
+      <mat-icon>insert_photo</mat-icon>
+      <span>Webcam</span>
     </button>
     <button *ngIf="route!='settings'" mat-menu-item routerLink="/settings" routerLinkActive="active">
       <mat-icon>settings</mat-icon>

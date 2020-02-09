@@ -1,9 +1,30 @@
+
+mat-panel-title{
+  font-size: 5vw;
+  position: relative;
+  left: 39vw;
+  margin-top: 3vh;
+  margin-bottom: 5vh;
+  color: white;
+ /* font-family: Arial, Helvetica, sans-serif;*/
+}
+mat-panel-description{
+  font-size: 1vw;
+  color: white;
+  margin-left: 7vw;
+  margin-right: 7vw;
+}
+mat-divider{
+  margin-bottom: 3vh;
+  margin-top: 3vh;
+  background-color: white;
+}
 mat-card{
   position: relative;
   left: 22vw;
   top: 10vh;
   width: 55vw;
-  height: 50vh;
+  height: 45vh;
 }
 
 mat-card-header{

@@ -28,6 +28,7 @@ import {MatCardModule} from '@angular/material/card';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {AuthGuard} from './auth/auth.guard';
 import {canActivate} from '@angular/fire/auth-guard';
+import { WebcamComponent } from './webcam/webcam.component';
 
 
 const appRoutes: Routes = [
@@ -38,6 +39,7 @@ const appRoutes: Routes = [
   { path: 'graph', component: GraphComponent, canActivate: [AuthGuard]},
   { path: 'settings', component: SettingsComponent, canActivate: [AuthGuard]},
   { path: 'timelapse', component: TimelapseComponent, canActivate: [AuthGuard]},
+  { path: 'webcam', component: WebcamComponent},
   { path: '**', component: PageNotFoundComponent },
 
 ];
@@ -51,7 +53,8 @@ const appRoutes: Routes = [
     HeaderComponent,
     GraphComponent,
     SettingsComponent,
-    TimelapseComponent
+    TimelapseComponent,
+    WebcamComponent
   ],
   exports: [RouterModule],
   imports: [
