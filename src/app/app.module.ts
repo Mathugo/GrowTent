@@ -39,7 +39,7 @@ const appRoutes: Routes = [
   { path: 'graph', component: GraphComponent, canActivate: [AuthGuard]},
   { path: 'settings', component: SettingsComponent, canActivate: [AuthGuard]},
   { path: 'timelapse', component: TimelapseComponent, canActivate: [AuthGuard]},
-  { path: 'webcam', component: WebcamComponent},
+  { path: 'webcam', component: WebcamComponent, canActivate: [AuthGuard]},
   { path: '**', component: PageNotFoundComponent },
 
 ];
@@ -82,7 +82,6 @@ const appRoutes: Routes = [
   providers: [AuthServiceService],
   bootstrap: [AppComponent]
 })
-
 
 export class AppModule {
 }

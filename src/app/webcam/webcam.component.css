@@ -23,4 +23,6 @@ mat-card-content{
 mat-divider{
   margin: 5%;
 }
-
+button{
+  margin: 2%;
+}
