@@ -22,17 +22,32 @@
       <div class="row">
         <mat-icon>toys</mat-icon>
         <span>Fan speed {{pwm}} %</span>
-        <mat-slider class="slider_pwm" thumbLabel tickInterval="auto" [displayWith]="pourcentage" color="primary" min="1" max="100" value={{pwm}}></mat-slider>
+        <mat-slider class="slider_pwm"
+                    thumbLabel
+                    tickInterval="auto"
+                    [displayWith]="pourcentage"
+                    color="primary"
+                    min="1" max="100"
+                    value={{pwm}}
+                    [(ngModel)]="pwm"
+                    [disabled]="disable">
+        </mat-slider>
+      </div>
+      <div class="row">
+        <mat-checkbox class="radio_disabled" color="primary" [(ngModel)]="disable">Auto</mat-checkbox>
       </div>
     </div>
-
     <div class="row-right">
-      <mat-progress-spinner
-        class="example-margin"
-        [color]="color"
-        [mode]="mode"
-        [value]="value">
+      <!--
+      <div class="row_spinner">
+        <p>{{value}}% before finished</p>
+         <mat-progress-spinner class="example-margin"
+          [color]="color"
+          [mode]="mode"
+          [value]="value">
       </mat-progress-spinner>
+      </div>
+      -->
     </div>
    <!--
 

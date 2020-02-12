@@ -10,7 +10,7 @@ export class HomeComponent implements OnInit {
   color: ThemePalette = 'primary';
   mode: ProgressSpinnerMode = 'determinate';
   value = 50;
-
+  disable = false;
   humidity = 70;
   temp = 25;
   pwm = 40;

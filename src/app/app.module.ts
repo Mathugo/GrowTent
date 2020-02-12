@@ -10,7 +10,7 @@ import { HeaderComponent } from './header/header.component';
 import { AuthServiceService} from './service/auth-service.service';
 
 import {
-  MatButtonModule, MatDividerModule,
+  MatButtonModule, MatCheckboxModule, MatDividerModule,
   MatExpansionModule,
   MatFormFieldModule,
   MatInputModule,
@@ -33,7 +33,7 @@ import { FooterComponent } from './footer/footer.component';
 
 
 const appRoutes: Routes = [
-  { path: 'home', component: HomeComponent,
+  { path: 'home', component: HomeComponent, canActivate: [AuthGuard],
   data: {animation: 'Home'}},
   { path: 'signin', component: SigninComponent},
   { path: '', redirectTo: '/signin', pathMatch: 'full'},
@@ -82,6 +82,7 @@ const appRoutes: Routes = [
     MatDividerModule,
     MatProgressSpinnerModule,
     MatToolbarModule,
+    MatCheckboxModule,
   ],
   providers: [AuthServiceService],
   bootstrap: [AppComponent]

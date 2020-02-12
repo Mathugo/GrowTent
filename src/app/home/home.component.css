@@ -28,13 +28,10 @@ mat-card-content {
   margin-left: 3%;
   margin-top: 5%;
   margin-bottom: 5%;
-
 }
-
 .row-left{
   font-size: 1.5vw;
 }
-
 .row mat-icon {
   position: relative;
   top: 0.8vh;
@@ -53,6 +50,17 @@ mat-card-content {
 .row-right{
   font-size: 1.5vw;
 }
-
-
+.row_spinner{
+  position: relative;
+  bottom: 30vh;
+  left: 20em;
+}
+.slider_pwm{
+  width: 10vw;
+  margin: 1%;
+}
+.radio_disabled{
+  margin-bottom: 3%;
+  margin-left: 0.5%;
+}
 
