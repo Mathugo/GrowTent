@@ -1,47 +1,48 @@
-<div class="intro">
-  <mat-panel-title>GrowTent</mat-panel-title><br>
-  <mat-panel-description>Is a remote access control tool for your plants.
-    You will be able to catch crucial informations like humidity, temperature but also
-    a timelapse and the current picture from your plants.
-  </mat-panel-description>
-  <mat-divider></mat-divider>
-</div>
+<div [@simpleFadeAnimation]="'in'">
+  <div class="intro">
+    <mat-panel-title>GrowTent</mat-panel-title><br>
+    <mat-panel-description>Is a remote access control tool for your plants.
+      You will be able to catch crucial informations like humidity, temperature but also
+      a timelapse and the current picture from your plants.
+    </mat-panel-description>
+    <mat-divider></mat-divider>
+  </div>
 
-<mat-card>
-  <mat-card-header>
-    <mat-card-title>Signin</mat-card-title>
-    <mat-card-subtitle>Please fill out the form to signin into GrowTent</mat-card-subtitle>
-    <mat-icon id="https">face</mat-icon>
-  </mat-card-header>
-  <mat-card-content>
-    <div class="email">
-      <mat-icon id="login_icon">account_circle</mat-icon>
-      <mat-form-field class="email_field">
-        <input matInput type="text" placeholder="Email" [(ngModel)]="form.email">
-        <button mat-button *ngIf="form.email" matSuffix mat-icon-button aria-label="Clear" (click)="form.email=''">
-          <mat-icon>close</mat-icon>
-        </button>
-    </mat-form-field>
-    </div>
-    <div class="password">
-      <mat-icon id="pwd_icon">lock</mat-icon>
-      <mat-form-field class="password_field">
-        <input matInput type="password" placeholder="Password" [(ngModel)]="form.password">
-        <button mat-button *ngIf="form.password" matSuffix mat-icon-button aria-label="Clear" (click)="form.password=''">
-          <mat-icon>close</mat-icon>
-        </button>
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Signin</mat-card-title>
+      <mat-card-subtitle>Please fill out the form to signin into GrowTent</mat-card-subtitle>
+      <mat-icon id="https">face</mat-icon>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="email">
+        <mat-icon id="login_icon">account_circle</mat-icon>
+        <mat-form-field class="email_field">
+          <input matInput type="text" placeholder="Email" [(ngModel)]="form.email">
+          <button mat-button *ngIf="form.email" matSuffix mat-icon-button aria-label="Clear" (click)="form.email=''">
+            <mat-icon>close</mat-icon>
+          </button>
       </mat-form-field>
-    </div>
-  </mat-card-content>
-  <button id="submit" mat-raised-button matTooltip="Log you !" (click)=Login()>Submit</button>
-</mat-card>
+      </div>
+      <div class="password">
+        <mat-icon id="pwd_icon">lock</mat-icon>
+        <mat-form-field class="password_field">
+          <input matInput type="password" placeholder="Password" [(ngModel)]="form.password">
+          <button mat-button *ngIf="form.password" matSuffix mat-icon-button aria-label="Clear" (click)="form.password=''">
+            <mat-icon>close</mat-icon>
+          </button>
+        </mat-form-field>
+      </div>
+    </mat-card-content>
+    <button id="submit" mat-raised-button matTooltip="Log you !" (click)=Login()>Submit</button>
+  </mat-card>
 
-<div class="gooey" *ngIf="loading">
-  <span class="dot"></span>
-  <div class="dots">
-    <span></span>
-    <span></span>
-    <span></span>
+  <div class="gooey" *ngIf="loading">
+    <span class="dot"></span>
+    <div class="dots">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
   </div>
 </div>
-

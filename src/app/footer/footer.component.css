@@ -6,18 +6,23 @@ mat-toolbar{
 
 .footer_logo{
   position: relative;
-  left: 8vw;
+  left: 6vw;
   top: 3vh;
   margin-bottom: 1.5%;
-
 }
 .footer_logo span{
   font-size: 1.5vw;
 }
-
+.footer_logo mat-icon{
+  position: relative;
+  top: 1.2vh;
+  margin-right: 3%;
+  font-size: 2.3vw;
+  width: 2.3vw;
+}
 .footer_version{
   position: relative;
-  left: 35vw;
+  left: 33vw;
   top: 3vh;
   margin-bottom: 1.5%;
 }
@@ -36,7 +41,7 @@ mat-toolbar{
   left: 55vw;
   top: 3vh;
   margin-bottom: 1.5%;
-
+  margin-right: 3%;
 }
 .footer_copyright span{
   font-size: 1vw;

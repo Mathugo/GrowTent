@@ -3,13 +3,22 @@ import * as firebase from 'firebase';
 import {MatSnackBar, MatSnackBarModule} from '@angular/material';
 import { AuthServiceService} from '../service/auth-service.service';
 import {Router} from '@angular/router';
-import { timer } from 'rxjs';
+import {
+  trigger,
+  state,
+  style,
+  animate,
+  transition
+} from '@angular/animations';
+import {transitionAnimation} from '../transition-animation';
 
 @Component({
   selector: 'app-signin',
   templateUrl: './signin.component.html',
-  styleUrls: ['./signin.component.css']
+  styleUrls: ['./signin.component.css'],
+  animations: [transitionAnimation]
 })
+
 export class SigninComponent implements OnInit {
   form = {
     email: '',

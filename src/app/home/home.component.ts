@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthServiceService} from '../service/auth-service.service';
 import {ProgressSpinnerMode, ThemePalette} from '@angular/material';
 
 @Component({
