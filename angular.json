@@ -123,5 +123,8 @@
       }
     }
   },
-  "defaultProject": "GrowTent"
+  "defaultProject": "GrowTent",
+  "cli": {
+    "analytics": false
+  }
 }

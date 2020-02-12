@@ -1,16 +1,43 @@
 
 <mat-card class="home-card">
   <mat-card-header>
-    <mat-icon>info</mat-icon>
+    <mat-icon id="info">info</mat-icon>
     <mat-card-title>Basic informations about your plants</mat-card-title>
     <mat-card-subtitle>On this page you will catch humidity, temperature level and current fan speed</mat-card-subtitle>
   </mat-card-header>
+
   <mat-card-content>
-        <p>Humidity {{humidity}}%</p>
+
+    <div class="row-left">
+      <div class="row">
+        <mat-icon>invert_colors</mat-icon>
+        <span>Humidity {{humidity}} %</span>
         <mat-progress-bar class="humidity" mode="determinate" value={{humidity}}></mat-progress-bar>
-      <p>Temperature {{temp}}°C</p>
-      <mat-progress-bar class="temp" mode="determinate" value={{temp}}></mat-progress-bar>
-    <p>Current Speed</p>
-    <mat-slider class="slider_pwm" thumbLabel [displayWith]="pourcentage" color="primary" min="1" max="100" step="1" value={{pwm}} ></mat-slider>
+      </div>
+      <div class="row">
+        <mat-icon>whatshot</mat-icon>
+        <span>Temperature {{temp}}°C</span>
+        <mat-progress-bar class="temp" mode="determinate" value={{temp}}></mat-progress-bar>
+      </div>
+      <div class="row">
+        <mat-icon>toys</mat-icon>
+        <span>Fan speed {{pwm}} %</span>
+        <mat-slider class="slider_pwm" thumbLabel tickInterval="auto" [displayWith]="pourcentage" color="primary" min="1" max="100" value={{pwm}}></mat-slider>
+      </div>
+    </div>
+
+    <div class="row-right">
+    </div>
+   <!--
+    <mat-progress-spinner
+      class="example-margin"
+      [color]="color"
+      [mode]="mode"
+      [value]="value">
+    </mat-progress-spinner>
+    <mat-icon>hourglass_empty</mat-icon> -->
   </mat-card-content>
 </mat-card>
+
+
+<!-- Mettre spinner progress pour temps avant finir, mettre date de plantation et fin -->

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthServiceService} from '../service/auth-service.service';
+import {ProgressSpinnerMode, ThemePalette} from '@angular/material';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +8,10 @@ import { AuthServiceService} from '../service/auth-service.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  color: ThemePalette = 'primary';
+  mode: ProgressSpinnerMode = 'determinate';
+  value = 50;
+
   humidity = 70;
   temp = 25;
   pwm = 40;
@@ -15,7 +20,10 @@ export class HomeComponent implements OnInit {
 
   pourcentage(value: number)
   {
-    return value+"%";
+    if (value >= 1) {
+      return value + "%";
+    }
+    return value;
   }
   ngOnInit() {
   }

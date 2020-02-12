@@ -14,8 +14,8 @@ import {
   MatExpansionModule,
   MatFormFieldModule,
   MatInputModule,
-  MatMenuModule,
-  MatSliderModule, MatSnackBarModule,
+  MatMenuModule, MatProgressSpinnerModule,
+  MatSliderModule, MatSnackBarModule, MatToolbarModule,
   MatTooltipModule
 } from '@angular/material';
 import {MatIconModule} from '@angular/material/icon';
@@ -29,11 +29,12 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {AuthGuard} from './auth/auth.guard';
 import {canActivate} from '@angular/fire/auth-guard';
 import { WebcamComponent } from './webcam/webcam.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent,
-  data: {animation: 'Home'}, canActivate: [AuthGuard]},
+  data: {animation: 'Home'}},
   { path: 'signin', component: SigninComponent},
   { path: '', redirectTo: '/signin', pathMatch: 'full'},
   { path: 'graph', component: GraphComponent, canActivate: [AuthGuard]},
@@ -54,7 +55,8 @@ const appRoutes: Routes = [
     GraphComponent,
     SettingsComponent,
     TimelapseComponent,
-    WebcamComponent
+    WebcamComponent,
+    FooterComponent
   ],
   exports: [RouterModule],
   imports: [
@@ -78,6 +80,8 @@ const appRoutes: Routes = [
     MatTooltipModule,
     MatSnackBarModule,
     MatDividerModule,
+    MatProgressSpinnerModule,
+    MatToolbarModule,
   ],
   providers: [AuthServiceService],
   bootstrap: [AppComponent]

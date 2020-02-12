@@ -1,0 +1,50 @@
+
+mat-toolbar{
+  height: 15vh;
+  width: 100%;
+}
+
+.footer_logo{
+  position: relative;
+  left: 8vw;
+  top: 3vh;
+  margin-bottom: 1.5%;
+
+}
+.footer_logo span{
+  font-size: 1.5vw;
+}
+
+.footer_version{
+  position: relative;
+  left: 35vw;
+  top: 3vh;
+  margin-bottom: 1.5%;
+}
+.footer_version span{
+  font-size: 1.3vw;
+}
+.footer_version mat-icon{
+  position: relative;
+  top: 1.2vh;
+  margin-right: 3%;
+  font-size: 2vw;
+  width: 2vw;
+}
+.footer_copyright{
+  position: relative;
+  left: 55vw;
+  top: 3vh;
+  margin-bottom: 1.5%;
+
+}
+.footer_copyright span{
+  font-size: 1vw;
+}
+.footer_copyright mat-icon{
+  position: relative;
+  top: 1.2vh;
+  margin-right: 3%;
+  font-size: 2vw;
+  width: 2vw;
+}
