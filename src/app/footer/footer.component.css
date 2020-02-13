@@ -8,6 +8,10 @@ mat-toolbar{
 #version{
 font-size: 15px;
 }
+#copyright{
+  font-size: 15px;
+  margin-right: 3vw;
+}
 .example-spacer {
   flex: 1 1 auto;
 }

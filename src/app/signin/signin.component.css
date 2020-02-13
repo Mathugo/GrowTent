@@ -1,4 +1,3 @@
-
 .material-icons.md-24 {
   font-size: 40px;
   padding: 0 14px;
@@ -17,12 +16,12 @@ mat-card{
   left: 22vw;
   top: 10vh;
   width: 55vw;
-  height: 45vh;
+  height: 55vh;
 }
 mat-card-header{
   text-align: center;
   position: relative;
-  margin-left: 14vw;
+  margin-left: 16vw;
   margin-right: 10vw;
   margin-top: 1vh;
 }
@@ -31,6 +30,11 @@ mat-card-header{
   left: 13vw;
   margin-top: 1vh;
   margin-right: 1vw;
+}
+#face {
+  padding: 0 14px;
+  position: relative;
+  left: 12vw;
 }
 #login_icon{
   position: relative;
@@ -43,20 +47,17 @@ mat-card-header{
   margin-right: 1vw;
 }
 #submit{
-  position: relative;
-  left: 24vw;
-  top: 1vh;
-  size: auto;
-  width: 7vw;
-  height: 7vh;
-  font-size: calc(8px + 0.7vw);
+  width: 15vw;
+  height: 10vh;
+  font-size: calc(12px + 0.7vw);
   text-align: center;
-  box-sizing: border-box;
-  margin:0 0.3em 0.3em 0;
+  position: relative;
+  left: 21vw;
 }
+
 .email{
   position: relative;
-  left: 13vw;
+  left: 15vw;
   margin-right: 2vw;
 }
 .email_field{
@@ -64,7 +65,7 @@ mat-card-header{
 }
 .password{
   position: relative;
-  left: 13vw;
+  left: 15vw;
   margin-right: 2vw;
 }
 .password_field{
