@@ -27,7 +27,6 @@ export class SigninComponent implements OnInit {
   loading: boolean;
   constructor(private _snackBar: MatSnackBar, public authService: AuthServiceService, private router: Router) {
   }
-
   openSnackBar(message: string, action: string) {
     this._snackBar.open(message, action, {
       duration: 2000,

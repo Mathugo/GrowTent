@@ -43,7 +43,7 @@ app-root:empty + .loading {
   box-sizing: border-box;
   border: 32px solid #fff;
   border-color: #fff transparent #fff transparent;
-  animation: lds-hourglass 2s infinite;
+  animation: lds-hourglass 1.5s infinite;
 }
 @keyframes lds-hourglass {
   0% {

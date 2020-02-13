@@ -1,22 +1,10 @@
 <div [@simpleFadeAnimation]="'in'">
-  <div class="intro">
-    <mat-toolbar color="primary">
-      <mat-toolbar-row>
-        <mat-icon>eco</mat-icon>
-        <h1>GrowTent</h1><br>
-        <h2>Control your plants</h2>
-      </mat-toolbar-row>
-    </mat-toolbar>
-  </div>
-    <!--
-    <mat-panel-title>GrowTent</mat-panel-title><br>
-    <mat-panel-description>Is a remote access control tool for your plants.
-      You will be able to catch crucial informations like humidity, temperature but also
-      a timelapse and the current picture from your plants.
-    </mat-panel-description>
-    <mat-divider></mat-divider>
-  </div>
--->
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <i class="material-icons md-24">eco</i>
+      <span id="title">GrowTent</span>
+    </mat-toolbar-row>
+  </mat-toolbar>
   <mat-card>
     <mat-card-header>
       <mat-card-title>Signin</mat-card-title>
@@ -43,7 +31,9 @@
         </mat-form-field>
       </div>
     </mat-card-content>
+    <mat-card-actions>
     <button id="submit" mat-raised-button matTooltip="Log you !" (click)=Login()>Submit</button>
+    </mat-card-actions>
   </mat-card>
 
   <div class="gooey" *ngIf="loading">
