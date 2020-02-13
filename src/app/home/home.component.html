@@ -22,6 +22,9 @@
       <div class="row">
         <mat-icon>toys</mat-icon>
         <span>Fan speed {{pwm}} %</span>
+        <mat-checkbox class="radio_disabled" color="primary" [(ngModel)]="disable">Auto</mat-checkbox>
+      </div>
+      <div class="row">
         <mat-slider class="slider_pwm"
                     thumbLabel
                     tickInterval="auto"
@@ -32,9 +35,6 @@
                     [(ngModel)]="pwm"
                     [disabled]="disable">
         </mat-slider>
-      </div>
-      <div class="row">
-        <mat-checkbox class="radio_disabled" color="primary" [(ngModel)]="disable">Auto</mat-checkbox>
       </div>
     </div>
     <div class="row-right">

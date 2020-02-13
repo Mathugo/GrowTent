@@ -33,6 +33,7 @@ mat-card-header{
 }
 #face {
   padding: 0 14px;
+  margin-right: 2%;
   position: relative;
   left: 12vw;
 }
