@@ -1,19 +1,20 @@
 .header button{
-  margin: 2%;
   font-size: 2vw;
 }
 .header .page{
   color: white;
-  margin-right: 0.5vw;
+  font-size: calc(20px + 1.2vw);
 }
-.icon_header{
-  position: relative;
-  top: 2vh;
+.material-icons.md-24{
   color: rgba(255, 255, 255, 1);
-  font-size: 3vw;
-  margin-left: 2%;
-  margin-top: 2%;
+  padding: 0 14px;
+  font-size: calc(28px + 1vw);
+  position: relative;
+  left: 12px;
 }
-
+#more_vert{
+  margin: 2%;
+  font-size: calc(20px + 1.2vw);
+}
 .material-icons.md-light { color: rgba(255, 255, 255, 1); }
 .material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
