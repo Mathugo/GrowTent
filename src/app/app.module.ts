@@ -33,7 +33,7 @@ import { FooterComponent } from './footer/footer.component';
 
 
 const appRoutes: Routes = [
-  { path: 'home', component: HomeComponent,
+  { path: 'home', component: HomeComponent, canActivate: [AuthGuard],
   data: {animation: 'Home'}},
   { path: 'signin', component: SigninComponent},
   { path: '', redirectTo: '/signin', pathMatch: 'full'},
