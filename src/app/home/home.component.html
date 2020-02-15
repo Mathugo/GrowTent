@@ -5,14 +5,12 @@
     <mat-card-title>Basic informations about your plants</mat-card-title>
     <mat-card-subtitle>On this page you will catch humidity, temperature level and current fan speed</mat-card-subtitle>
   </mat-card-header>
-
   <mat-card-content>
 
-    <div class="row-left">
       <div class="row">
-        <mat-icon>invert_colors</mat-icon>
-        <span>Humidity {{humidity}} %</span>
-        <mat-progress-bar class="humidity" mode="determinate" value={{humidity}}></mat-progress-bar>
+          <mat-icon>invert_colors</mat-icon>
+          <span>Humidity {{humidity}} %</span>
+          <mat-progress-bar class="humidity" mode="determinate" value={{humidity}}></mat-progress-bar>
       </div>
       <div class="row">
         <mat-icon>whatshot</mat-icon>
@@ -23,8 +21,6 @@
         <mat-icon>toys</mat-icon>
         <span>Fan speed {{pwm}} %</span>
         <mat-checkbox class="radio_disabled" color="primary" [(ngModel)]="disable">Auto</mat-checkbox>
-      </div>
-      <div class="row">
         <mat-slider class="slider_pwm"
                     thumbLabel
                     tickInterval="auto"
@@ -36,24 +32,24 @@
                     [disabled]="disable">
         </mat-slider>
       </div>
-    </div>
-    <div class="row-right">
-      <!--
-      <div class="row_spinner">
-        <p>{{value}}% before finished</p>
-         <mat-progress-spinner class="example-margin"
-          [color]="color"
-          [mode]="mode"
-          [value]="value">
-      </mat-progress-spinner>
+    <div class="row">
+      <div class="text_pressure">
+      <mat-icon>waves</mat-icon>
+      <span>Pressure 101,325 Pa</span>
       </div>
-      -->
+      <mat-progress-bar class="pressure" mode="determinate" value=30></mat-progress-bar>
     </div>
-   <!--
-
-    <mat-icon>hourglass_empty</mat-icon> -->
+    <!--
+    <div class="row">
+        <mat-icon>done</mat-icon>
+        <span>{{value}}% before finished</span>
+        <mat-progress-spinner class="spinner"
+                              [color]="color"
+                              [mode]="mode"
+                              [value]="value">
+        </mat-progress-spinner>
+    </div> -->
   </mat-card-content>
 </mat-card>
-
 
 <!-- Mettre spinner progress pour temps avant finir, mettre date de plantation et fin -->
