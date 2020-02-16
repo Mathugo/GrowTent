@@ -1,13 +1,20 @@
-
+mat-toolbar{
+  margin-bottom: 5%;
+}
+mat-toolbar-row{
+  word-break: break-word;
+}
 .home-card
 {
   position: relative;
   top: 5vh;
   margin: 0 auto;
+  /*
   width: 55vw;
-  min-width: 30vw;
   height: 70vh;
-  min-height: 50vh;
+   */
+  width: 55vw;
+  height: auto;
 }
 .mat-card-header{
   text-align: center;
@@ -23,20 +30,18 @@
   left: 10vw;
 }
 .row{
-  margin-left: 3%;
-  margin-top: 2%;
-  margin-bottom: 2%;
   display: inline-block;
-  width: 45%;
-  height: 50%;
+  margin: 2%;
+  width: 300px;
+  height: 120px;
+  padding: 6px;
+  background: red;
 }
+
 .row mat-icon {
-  position: relative;
-  top: 0.8vh;
-  font-size: 2vw;
-  width: 2vw;
   margin-right: 2%;
 }
+
 .humidity{
   width: 100%;
   margin-top: 3%;
@@ -46,8 +51,9 @@
   margin-top: 3%;
 }
 
-.row .text_pressure{
-  margin-bottom: 4%;
+#pressure_row{
+  position: relative;
+  bottom: 4vh;
 }
 .spinner{
   width: 40%;
