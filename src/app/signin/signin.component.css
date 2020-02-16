@@ -13,10 +13,12 @@ mat-toolbar span{
 }
 mat-card{
   position: relative;
-  left: 22vw;
+  margin: 0 auto;
   top: 10vh;
   width: 55vw;
   height: 55vh;
+  min-width: 270px;
+  min-height: 300px;
 }
 mat-card-header{
   text-align: center;
@@ -24,6 +26,12 @@ mat-card-header{
   margin-left: 16vw;
   margin-right: 10vw;
   margin-top: 1vh;
+}
+mat-card-actions{
+  text-align: center;
+}
+mat-card-content{
+  text-align: center;
 }
 #https{
   position: relative;
@@ -36,6 +44,7 @@ mat-card-header{
   margin-right: 2%;
   position: relative;
   left: 12vw;
+
 }
 #login_icon{
   position: relative;
@@ -52,25 +61,19 @@ mat-card-header{
   height: 10vh;
   font-size: calc(12px + 0.7vw);
   text-align: center;
-  position: relative;
-  left: 21vw;
 }
 
 .email{
-  position: relative;
-  left: 15vw;
   margin-right: 2vw;
 }
 .email_field{
-  width: 22vw;
+  width: 25vw;
 }
 .password{
-  position: relative;
-  left: 15vw;
   margin-right: 2vw;
 }
 .password_field{
-  width: 22vw;
+  width: 25vw;
 }
 
 

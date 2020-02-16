@@ -2,8 +2,8 @@
 .home-card
 {
   position: relative;
-  left: 20vw;
   top: 5vh;
+  margin: 0 auto;
   width: 55vw;
   min-width: 30vw;
   height: 70vh;
