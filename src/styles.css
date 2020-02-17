@@ -1,8 +1,36 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
+html, body{
+  margin: 0; padding: 0;
+  background-color: #032d3d;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+html{
+  height: auto;
+  min-height: 100vh;
+}
+body {
+  min-height: 100vh;
+  width: 100%;
+}
+/*
+body{
+  height: auto;
+  min-height: 100%;
+  width: 100%;
+  position: relative;
+  background-color: #032d3d;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+}
+*/
 .loading {
   opacity: 0;
   position: fixed;

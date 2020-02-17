@@ -1,13 +1,15 @@
+/*
 html{
-  height: 100%;
+
+  height: auto;
   width: 100%;
   background-color: #032d3d;
-  /* Center and scale the image nicely */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+
 }
-/*
+
 body{
   height: auto;
   width: auto;

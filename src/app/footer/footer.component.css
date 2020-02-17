@@ -1,4 +1,9 @@
-
+footer{
+  width: 100%;
+  margin-top: 10%;
+ 
+  bottom: 0;
+}
 mat-toolbar{
   width: 100%;
 }
