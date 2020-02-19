@@ -11,6 +11,7 @@ import * as firebase from 'firebase';
 })
 export class AppComponent {
   title = 'GrowTent';
+
   constructor() {
     const firebaseConfig = {
       apiKey: "AIzaSyAcRUgZHPKUJ-n5Ax14j_wPgkvIF9vJKp4",

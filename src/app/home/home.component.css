@@ -4,6 +4,7 @@ mat-toolbar{
 mat-toolbar-row{
   word-break: break-word;
 }
+
 .home-card
 {
   position: relative;
@@ -32,7 +33,9 @@ mat-toolbar-row{
 .row{
   display: inline-block;
   margin: 2%;
-  width: 300px;
+/*  width: 300px;*/
+  width: 24vw;
+  min-width: 200px;
   height: 120px;
   padding: 6px;
   background: red;
@@ -43,12 +46,14 @@ mat-toolbar-row{
 }
 
 .humidity{
-  width: 100%;
+  width: 50vw;
+  max-width: 300px;
   margin-top: 3%;
 }
 .temp {
-  width: 100%;
+  width: 50vw;
   margin-top: 3%;
+  max-width: 300px;
 }
 
 #pressure_row{
@@ -65,6 +70,5 @@ mat-toolbar-row{
 .radio_disabled{
   margin-left: 10%;
   margin-bottom: 1%;
+  display: inline;
 }
-
-
