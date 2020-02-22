@@ -40,6 +40,7 @@ export class SigninComponent implements OnInit {
       this.loading = true;
       firebase.auth().signInWithEmailAndPassword(this.form.email, this.form.password)
         .then(value => {
+          this.authService.getInfoUser();
           this.authService.isLogged = true;
           this.router.navigate(['home']);
           this.loading = false;

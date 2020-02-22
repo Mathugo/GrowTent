@@ -30,11 +30,15 @@ import {AuthGuard} from './auth/auth.guard';
 import {canActivate} from '@angular/fire/auth-guard';
 import { WebcamComponent } from './webcam/webcam.component';
 import { FooterComponent } from './footer/footer.component';
+import {AngularFireModule} from '@angular/fire';
+import {AngularFireDatabaseModule} from '@angular/fire/database';
+import {AngularFireStorageModule} from '@angular/fire/storage';
+import {AngularFirestoreModule} from '@angular/fire/firestore';
 
 
 const appRoutes: Routes = [
-  { path: 'home', component: HomeComponent,
-  data: {animation: 'Home'}},
+  { path: 'home', component: HomeComponent},
+ // data: {animation: 'Home'}},
   { path: 'signin', component: SigninComponent},
   { path: '', redirectTo: '/signin', pathMatch: 'full'},
   { path: 'graph', component: GraphComponent, canActivate: [AuthGuard]},
@@ -45,6 +49,16 @@ const appRoutes: Routes = [
 
 ];
 
+const firebaseConfig = {
+  apiKey: "AIzaSyAcRUgZHPKUJ-n5Ax14j_wPgkvIF9vJKp4",
+  authDomain: "growtent-111ca.firebaseapp.com",
+  databaseURL: "https://growtent-111ca.firebaseio.com",
+  projectId: "growtent-111ca",
+  storageBucket: "growtent-111ca.appspot.com",
+  messagingSenderId: "205033270083",
+  appId: "1:205033270083:web:e31d66f9a1ccac5c705df6",
+  measurementId: "G-3ZXE38JVHE"
+};
 @NgModule({
   declarations: [
     AppComponent,
@@ -83,6 +97,10 @@ const appRoutes: Routes = [
     MatProgressSpinnerModule,
     MatToolbarModule,
     MatCheckboxModule,
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule,
+    AngularFireStorageModule,
+    AngularFirestoreModule
   ],
   providers: [AuthServiceService],
   bootstrap: [AppComponent]

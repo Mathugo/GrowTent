@@ -5,7 +5,7 @@ import {
   style,
   animate,
   group,
-  animateChild
+  animateChild, state
 } from '@angular/animations';
 
 export const slideInAnimation = trigger('routeAnimations', [

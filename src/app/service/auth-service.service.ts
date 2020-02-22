@@ -3,6 +3,7 @@ import {AngularFireAuth} from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
 import { Router } from '@angular/router';
 import {resolve} from 'url';
+import {AngularFirestore} from '@angular/fire/firestore';
 
 @Injectable({
   providedIn: 'root'
@@ -12,25 +13,36 @@ export class AuthServiceService {
   email = '';
   isLogged = false;
   redirectUrl: string;
+  USER = {
+    firstname : '',
+    lastname : '',
+    cultureName : '',
+    datePlant: '',
+  };
 
-  constructor(public router: Router) {
+  constructor(public router: Router, private db: AngularFirestore) {
   }
+  getInfoUser() {
+    let userId = firebase.auth().currentUser.uid;
+    let ref = this.db.collection('users').doc(userId);
+    let getDoc = ref.get().subscribe(value => {
+      if (!value.exists){
+        console.log('No such document ! ');
+      } else {
+        this.USER.firstname = value.data().firstname;
+        this.USER.lastname = value.data().lastname;
+        this.USER.cultureName = value.data().cultureName;
+        console.log("CULTURE NAME : "+this.USER.cultureName);
+        this.USER.datePlant = value.data().datePlant;
+      }
+    });
+  }
+  signup(email: string, password: string) {}
 
-  signup(email: string, password: string) {
-  }
-
-  login(email_: string, password: string) {
-      firebase.auth().signInWithEmailAndPassword(email_, password)
-        .then(value => {
-          console.log("Nice it worked ! ");
-          this.isLogged = true;
-          this.email = email_;
-        })
-        .catch(err => {
-          console.log("Something went wrong: ", err.message);
-          this.isLogged = false;
-        });
-  }
+  getFirstName() { return this.USER.firstname;}
+  getLastName() { return this.USER.lastname;}
+  getCultureName() { return this.USER.cultureName;}
+  getdatePlant() { return this.USER.datePlant;}
 
   logout() {
     firebase.auth().signOut()

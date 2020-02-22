@@ -1,69 +1,69 @@
+<div [@simpleFadeAnimation]="'in'">
+    <mat-card class="home-card">
+      <mat-card-header>
+        <mat-icon id="info">info</mat-icon>
+        <mat-card-title>{{USER.cultureName | uppercase}}</mat-card-title>
+        <mat-card-subtitle>On this page you will catch humidity, temperature level and current fan speed</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+          <div class="row">
+            <mat-toolbar>
+              <mat-toolbar-row>
+                <mat-icon>invert_colors</mat-icon>
+                <span>Humidity {{humidity}} %</span>
+              </mat-toolbar-row>
+            </mat-toolbar>
+            <mat-progress-bar class="humidity" mode="determinate" value={{humidity}}></mat-progress-bar>
+          </div>
+          <div class="row">
+            <mat-toolbar>
+              <mat-toolbar-row>
+                <mat-icon>whatshot</mat-icon>
+                <span>Temperature {{temp}}°C</span>
+              </mat-toolbar-row>
+            </mat-toolbar>
+            <mat-progress-bar class="temp" mode="determinate" value={{temp*2}}></mat-progress-bar>
+          </div>
+          <div class="row">
+            <mat-toolbar>
+              <mat-toolbar-row>
+                <mat-icon>toys</mat-icon>
+                <span>Fan speed {{pwm}} %</span>
+                <mat-checkbox class="radio_disabled" color="primary" [(ngModel)]="disable">Auto</mat-checkbox>
+              </mat-toolbar-row>
+            </mat-toolbar>
+            <mat-slider class="slider_pwm"
+                          thumbLabel
+                          tickInterval="auto"
+                          [displayWith]="pourcentage"
+                          color="primary"
+                          min="1" max="100"
+                          value={{pwm}}
+                          [(ngModel)]="pwm"
+                          [disabled]="disable">
+              </mat-slider>
+          </div>
+        <div class="row">
+          <mat-toolbar id="pressure_row">
+            <mat-toolbar-row>
+              <mat-icon>waves</mat-icon>
+              <span>Pressure 101,325 Pa</span>
+            </mat-toolbar-row>
+          </mat-toolbar>
+          <mat-progress-bar class="pressure" mode="determinate" value=30></mat-progress-bar>
+        </div>
+        <!--
+        <div class="row">
+            <mat-icon>done</mat-icon>
+            <span>{{value}}% before finished</span>
+            <mat-progress-spinner class="spinner"
+                                  [color]="color"
+                                  [mode]="mode"
+                                  [value]="value">
+            </mat-progress-spinner>
+        </div> -->
+      </mat-card-content>
+    </mat-card>
 
-<mat-card class="home-card">
-  <mat-card-header>
-    <mat-icon id="info">info</mat-icon>
-    <mat-card-title>Basic informations about your plants</mat-card-title>
-    <mat-card-subtitle>On this page you will catch humidity, temperature level and current fan speed</mat-card-subtitle>
-  </mat-card-header>
-  <mat-card-content>
-
-      <div class="row">
-        <mat-toolbar>
-          <mat-toolbar-row>
-            <mat-icon>invert_colors</mat-icon>
-            <span>Humidity {{humidity}} %</span>
-          </mat-toolbar-row>
-        </mat-toolbar>
-        <mat-progress-bar class="humidity" mode="determinate" value={{humidity}}></mat-progress-bar>
-      </div>
-      <div class="row">
-        <mat-toolbar>
-          <mat-toolbar-row>
-            <mat-icon>whatshot</mat-icon>
-            <span>Temperature {{temp}}°C</span>
-          </mat-toolbar-row>
-        </mat-toolbar>
-        <mat-progress-bar class="temp" mode="determinate" value={{temp*2}}></mat-progress-bar>
-      </div>
-      <div class="row">
-        <mat-toolbar>
-          <mat-toolbar-row>
-            <mat-icon>toys</mat-icon>
-            <span>Fan speed {{pwm}} %</span>
-            <mat-checkbox class="radio_disabled" color="primary" [(ngModel)]="disable">Auto</mat-checkbox>
-          </mat-toolbar-row>
-        </mat-toolbar>
-        <mat-slider class="slider_pwm"
-                      thumbLabel
-                      tickInterval="auto"
-                      [displayWith]="pourcentage"
-                      color="primary"
-                      min="1" max="100"
-                      value={{pwm}}
-                      [(ngModel)]="pwm"
-                      [disabled]="disable">
-          </mat-slider>
-      </div>
-    <div class="row">
-      <mat-toolbar id="pressure_row">
-        <mat-toolbar-row>
-          <mat-icon>waves</mat-icon>
-          <span>Pressure 101,325 Pa</span>
-        </mat-toolbar-row>
-      </mat-toolbar>
-      <mat-progress-bar class="pressure" mode="determinate" value=30></mat-progress-bar>
-    </div>
-    <!--
-    <div class="row">
-        <mat-icon>done</mat-icon>
-        <span>{{value}}% before finished</span>
-        <mat-progress-spinner class="spinner"
-                              [color]="color"
-                              [mode]="mode"
-                              [value]="value">
-        </mat-progress-spinner>
-    </div> -->
-  </mat-card-content>
-</mat-card>
-
-<!-- Mettre spinner progress pour temps avant finir, mettre date de plantation et fin -->
+  <!-- Mettre spinner progress pour temps avant finir, mettre date de plantation et fin -->
+</div>

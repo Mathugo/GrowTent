@@ -1,13 +1,16 @@
 import { Component } from '@angular/core';
 import {slideInAnimation} from './route-animation';
 import * as firebase from 'firebase';
-
+import {transitionAnimation} from './transition-animation';
+import {AngularFireModule} from '@angular/fire';
+import {AngularFireDatabaseModule} from '@angular/fire/database';
+import {RouterOutlet} from '@angular/router';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  animations: [slideInAnimation]
+  animations: [slideInAnimation, transitionAnimation]
 })
 export class AppComponent {
   title = 'GrowTent';
@@ -25,6 +28,10 @@ export class AppComponent {
     };
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
+    AngularFireModule.initializeApp(firebaseConfig);
     firebase.analytics();
+  }
+  prepareRoute(outlet: RouterOutlet) {
+    return outlet && outlet.activatedRouteData && outlet.activatedRouteData['animation'];
   }
 }
