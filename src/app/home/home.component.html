@@ -3,32 +3,33 @@
       <mat-card-header>
       <!--  <mat-icon id="info">info</mat-icon> -->
         <mat-card-title>{{USER.cultureName | uppercase}}</mat-card-title>
-        <mat-card-subtitle>On this page you will catch humidity, temperature level and current fan speed</mat-card-subtitle>
+        <mat-card-subtitle>On this page you will catch basic informations such as temperature, humidity, fan speed</mat-card-subtitle>
+        <mat-card-subtitle>Planted at {{USER.datePlant | date: 'medium'}}</mat-card-subtitle>
       </mat-card-header>
       <mat-card-content>
           <div class="row">
             <mat-toolbar>
               <mat-toolbar-row>
                 <mat-icon>invert_colors</mat-icon>
-                <span>Humidity {{humidity}} %</span>
+                <span>Humidity {{USER.humidity}} %</span>
               </mat-toolbar-row>
             </mat-toolbar>
-            <mat-progress-bar class="humidity" mode="determinate" value={{humidity}}></mat-progress-bar>
+            <mat-progress-bar class="humidity" mode="determinate" value={{USER.humidity}}></mat-progress-bar>
           </div>
           <div class="row">
             <mat-toolbar>
               <mat-toolbar-row>
                 <mat-icon>whatshot</mat-icon>
-                <span>Temperature {{temp}}°C</span>
+                <span>Temperature {{USER.temperature}}°C</span>
               </mat-toolbar-row>
             </mat-toolbar>
-            <mat-progress-bar class="temp" mode="determinate" value={{temp*2}}></mat-progress-bar>
+            <mat-progress-bar class="temp" mode="determinate" value={{USER.temperature*2}}></mat-progress-bar>
           </div>
           <div class="row">
             <mat-toolbar>
               <mat-toolbar-row>
                 <mat-icon>toys</mat-icon>
-                <span>Fan speed {{pwm}} %</span>
+                <span>Fan speed {{USER.fan}} %</span>
                 <mat-checkbox class="radio_disabled" color="primary" [(ngModel)]="disable">
                   <span>Auto</span>
                 </mat-checkbox>
@@ -40,8 +41,8 @@
                           [displayWith]="pourcentage"
                           color="primary"
                           min="1" max="100"
-                          value={{pwm}}
-                          [(ngModel)]="pwm"
+                          value={{USER.fan}}
+                          [(ngModel)]="USER.fan"
                           [disabled]="disable">
               </mat-slider>
           </div>
@@ -49,7 +50,7 @@
           <mat-toolbar id="pressure_row">
             <mat-toolbar-row>
               <mat-icon>waves</mat-icon>
-              <span>Pressure 101 Pa</span>
+              <span>Pressure {{USER.pressure}} Pa</span>
             </mat-toolbar-row>
           </mat-toolbar>
           <mat-progress-bar class="pressure" mode="determinate" value=30></mat-progress-bar>

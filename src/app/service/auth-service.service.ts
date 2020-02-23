@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import {AngularFireAuth} from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
 import { Router } from '@angular/router';
-import {resolve} from 'url';
 import {AngularFirestore} from '@angular/fire/firestore';
+
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +17,11 @@ export class AuthServiceService {
     firstname : '',
     lastname : '',
     cultureName : '',
-    datePlant: '',
+    datePlant: Date,
+    temperature: 0,
+    humidity: 0,
+    pressure: 0,
+    fan: 0
   };
 
   constructor(public router: Router, private db: AngularFirestore) {
@@ -34,8 +38,12 @@ export class AuthServiceService {
         this.USER.firstname = value.data().firstname;
         this.USER.lastname = value.data().lastname;
         this.USER.cultureName = value.data().cultureName;
+        this.USER.temperature = value.data().temperature;
+        this.USER.humidity = value.data().humidity;
+        this.USER.fan = value.data().fan;
+        this.USER.pressure = value.data().pressure;
+        this.USER.datePlant = value.data().datePlant.toDate();
         console.log('Data received');
-        this.USER.datePlant = value.data().datePlant;
         resolve('Get OK');
       }
     });
@@ -43,6 +51,7 @@ export class AuthServiceService {
   }
   signup(email: string, password: string) {}
 
+  getUserProfile() { return this.USER;}
   getFirstName() { return this.USER.firstname; }
   getLastName() { return this.USER.lastname; }
   getCultureName() { return this.USER.cultureName; }

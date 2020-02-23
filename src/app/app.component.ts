@@ -33,7 +33,6 @@ export class AppComponent {
 
   constructor(public authService: AuthServiceService) {
 
-
     /*
     firebase.initializeApp(firebaseConfig);
     AngularFireModule.initializeApp(firebaseConfig);

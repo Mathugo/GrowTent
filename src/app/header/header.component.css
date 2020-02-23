@@ -25,6 +25,12 @@
   margin-right: 8px;
   font-size: calc(20px + 0.5vw);
 }
-#name{
+name{
   font-size: calc(12px + 0.5vw);
+}
+.separator{
+  border-left: 3px solid white;
+  border-radius: 2px;
+  height: 30px;
+  margin: 1%;
 }

@@ -17,38 +17,23 @@ export class HomeComponent implements OnInit {
   mode: ProgressSpinnerMode = 'determinate';
   value = 50;
   disable = false;
-  humidity = 70;
-  temp = 25;
-  pwm = 40;
-  cultureName =  '';
   USER = {
     firstname : '',
     lastname : '',
     cultureName : '',
-    datePlant: '',
+    datePlant: Date,
+    temperature: 0,
+    humidity: 0,
+    pressure: 0,
+    fan: 0
   };
 
   constructor(private db: AngularFirestore, public authService: AuthServiceService) {
   }
 
-  getInfoUser() {
-    let userId = firebase.auth().currentUser.uid;
-    let ref = this.db.collection('users').doc(userId);
-    let getDoc = ref.get().subscribe(value => {
-      if (!value.exists){
-        console.log('No such document ! ');
-      } else {
-        this.USER.firstname = value.data().firstname;
-        this.USER.lastname = value.data().lastname;
-        this.USER.cultureName = value.data().cultureName;
-        console.log('CULTURE NAME : '+this.USER.cultureName);
-        this.USER.datePlant = value.data().datePlant;
-      }
-    });
-  }
   ngOnInit() {
-  this.USER.cultureName = this.authService.getCultureName();
-  console.log("On Init culture : "+this.USER.cultureName);
+  this.USER = this.authService.getUserProfile();
+  console.log('User profile done');
   }
   pourcentage(value: number) {
     if (value >= 1) {
