@@ -1,28 +1,30 @@
-
+.webcam-row{
+  text-align: center;
+}
 mat-card{
   width: 30vw;
   height: 20vh;
-  position: relative;
-  left: 30vw;
   background-color: white;
-  display: inline-block;
-  margin: 1%;
+  margin-top: 5vh;
+  display: inline-block; /* Otherwise the img overflow the page and for text-align*/
+  text-align: center;
 }
-.card-webcam-lastweek{
-  position: relative;
-  left: 50vh;
-}
-.card-webcam{
-  position: relative;
-  left: 30vh;
+mat-card-header{
+  text-align: center;
 }
 mat-card-content{
   color: white;
 }
+mat-card img{
 
-mat-divider{
-  margin: 5%;
 }
 button{
   margin: 2%;
 }
+mat-icon{
+  padding: 0 8px;
+}
+.spacer{
+  flex: 1 1 auto;
+}
+

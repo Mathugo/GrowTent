@@ -55,7 +55,7 @@ export class AuthServiceService {
   getFirstName() { return this.USER.firstname; }
   getLastName() { return this.USER.lastname; }
   getCultureName() { return this.USER.cultureName; }
-  getdatePlant() { return this.USER.datePlant; }
+  getDatePlant() { return this.USER.datePlant; }
 
   logout() {
     firebase.auth().signOut()

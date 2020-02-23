@@ -45,6 +45,6 @@ export class HomeComponent implements OnInit {
     ref.update({
       fan: this.USER.fan
     });
-    console.log('Fan updated : '+this.USER.fan);
+    console.log('Fan updated : ' + this.USER.fan);
   }
 }

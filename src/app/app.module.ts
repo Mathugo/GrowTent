@@ -35,7 +35,6 @@ import {AngularFireDatabaseModule} from '@angular/fire/database';
 import {AngularFireStorageModule} from '@angular/fire/storage';
 import {AngularFirestoreModule} from '@angular/fire/firestore';
 
-
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
  // data: {animation: 'Home'}},

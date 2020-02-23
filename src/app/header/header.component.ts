@@ -21,7 +21,6 @@ export class HeaderComponent implements OnInit {
       } else {
         this.route = 'Home';
       }
-      console.log('ROUTE : ' + this.route);
     });
     if (this.route === '') {this.route = 'home'; }
   }
