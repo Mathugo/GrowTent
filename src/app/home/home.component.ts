@@ -15,7 +15,6 @@ import * as firebase from 'firebase';
 export class HomeComponent implements OnInit {
   color: ThemePalette = 'primary';
   mode: ProgressSpinnerMode = 'determinate';
-  value = 50;
   disable = false;
   USER = {
     firstname : '',
@@ -25,7 +24,7 @@ export class HomeComponent implements OnInit {
     temperature: 0,
     humidity: 0,
     pressure: 0,
-    fan: 0
+    fan: 0,
   };
 
   constructor(private db: AngularFirestore, public authService: AuthServiceService) {
@@ -35,11 +34,17 @@ export class HomeComponent implements OnInit {
   this.USER = this.authService.getUserProfile();
   console.log('User profile done');
   }
-  pourcentage(value: number) {
-    if (value >= 1) {
-      return value + '%';
-    }
-    return value;
+  pourcentage(value: number): string {
+   return value + '%';
   }
-
+  update_fan() {
+    console.log('MOVE');
+    const uid = firebase.auth().currentUser.uid;
+    const ref = this.db.collection('users').doc(uid);
+    console.log('Collection receive ');
+    ref.update({
+      fan: this.USER.fan
+    });
+    console.log('Fan updated : '+this.USER.fan);
+  }
 }

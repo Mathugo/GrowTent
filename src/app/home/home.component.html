@@ -4,7 +4,10 @@
       <!--  <mat-icon id="info">info</mat-icon> -->
         <mat-card-title>{{USER.cultureName | uppercase}}</mat-card-title>
         <mat-card-subtitle>On this page you will catch basic informations such as temperature, humidity, fan speed</mat-card-subtitle>
-        <mat-card-subtitle>Planted at {{USER.datePlant | date: 'medium'}}</mat-card-subtitle>
+        <mat-card-subtitle>
+          <mat-icon id="date_range_icon">date_range</mat-icon>
+          Planted at {{USER.datePlant | date: 'medium'}}
+        </mat-card-subtitle>
       </mat-card-header>
       <mat-card-content>
           <div class="row">
@@ -43,6 +46,7 @@
                           min="1" max="100"
                           value={{USER.fan}}
                           [(ngModel)]="USER.fan"
+                          (change)="update_fan()"
                           [disabled]="disable">
               </mat-slider>
           </div>

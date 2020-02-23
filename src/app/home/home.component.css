@@ -26,7 +26,11 @@ mat-toolbar-row{
   text-align: center;
   width: 52vw;
 }
-
+#date_range_icon{
+  padding: 0 14px;
+  position: relative;
+  top: 6px;
+}
 #info{
   margin-top: 1vh;
   margin-right: 1vw;
@@ -58,7 +62,6 @@ mat-toolbar-row{
   margin-top: 3%;
   max-width: 300px;
 }
-
 #pressure_row{
   position: relative;
   bottom: 4vh;
