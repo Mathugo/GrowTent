@@ -39,7 +39,9 @@
       <span>Log out</span>
     </button>
   </mat-menu>
-
+      <span class="spacer"></span>
+      <i class="material-icons face">face</i>
+      <span *ngIf="firstname!='' && lastname!=''" id="name">{{firstname}} | {{lastname}}</span>
     </mat-toolbar-row>
   </mat-toolbar>
 </div>

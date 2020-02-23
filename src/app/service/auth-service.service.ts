@@ -22,49 +22,44 @@ export class AuthServiceService {
 
   constructor(public router: Router, private db: AngularFirestore) {
   }
-  getInfoUser() {
-    let userId = firebase.auth().currentUser.uid;
-    let ref = this.db.collection('users').doc(userId);
-    let getDoc = ref.get().subscribe(value => {
-      if (!value.exists){
+  getInfoUser(): Promise<void> {
+    return new Promise<void>(resolve => {
+      const userId = firebase.auth().currentUser.uid;
+      const ref = this.db.collection('users').doc(userId);
+      const getDoc = ref.get().subscribe(value => {
+      if (!value.exists) {
         console.log('No such document ! ');
+        resolve('Error getInfo');
       } else {
         this.USER.firstname = value.data().firstname;
         this.USER.lastname = value.data().lastname;
         this.USER.cultureName = value.data().cultureName;
-        console.log("CULTURE NAME : "+this.USER.cultureName);
+        console.log('Data received');
         this.USER.datePlant = value.data().datePlant;
+        resolve('Get OK');
       }
+    });
     });
   }
   signup(email: string, password: string) {}
 
-  getFirstName() { return this.USER.firstname;}
-  getLastName() { return this.USER.lastname;}
-  getCultureName() { return this.USER.cultureName;}
-  getdatePlant() { return this.USER.datePlant;}
+  getFirstName() { return this.USER.firstname; }
+  getLastName() { return this.USER.lastname; }
+  getCultureName() { return this.USER.cultureName; }
+  getdatePlant() { return this.USER.datePlant; }
 
   logout() {
     firebase.auth().signOut()
       .then(value => {
       this.isLogged = false;
       this.router.navigate(['signin']);
-      console.log("Sucessfull ! ");
+      console.log('Sucessfull ! ');
       })
       .catch(err => {
-        console.log("Error signout");
+        console.log('Error signout');
         this.isLogged = false;
         this.router.navigate(['signin']);
       });
-  }
-  getCurrentUser() {
-    return firebase.auth().currentUser
-  }
-  //https://firebase.google.com/docs/auth/web/manage-users#get_the_currently_signed-in_user
-  verifyConnection() {
-    if (!firebase.auth().currentUser) {
-      this.router.navigate(['signin']);
-    }
   }
 }
 

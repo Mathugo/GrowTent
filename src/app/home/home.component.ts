@@ -28,8 +28,7 @@ export class HomeComponent implements OnInit {
     datePlant: '',
   };
 
-  constructor(private db: AngularFirestore) {
-    this.getInfoUser();
+  constructor(private db: AngularFirestore, public authService: AuthServiceService) {
   }
 
   getInfoUser() {
@@ -42,18 +41,14 @@ export class HomeComponent implements OnInit {
         this.USER.firstname = value.data().firstname;
         this.USER.lastname = value.data().lastname;
         this.USER.cultureName = value.data().cultureName;
-        console.log("CULTURE NAME : "+this.USER.cultureName);
+        console.log('CULTURE NAME : '+this.USER.cultureName);
         this.USER.datePlant = value.data().datePlant;
       }
     });
   }
   ngOnInit() {
-/*
-    let email = firebase.auth().currentUser.email;
-    let path = '/users/' + email;
-    var userId = firebase.auth().currentUser.uid;
-    console.log("Uid : "+userId);
-    */
+  this.USER.cultureName = this.authService.getCultureName();
+  console.log("On Init culture : "+this.USER.cultureName);
   }
   pourcentage(value: number) {
     if (value >= 1) {

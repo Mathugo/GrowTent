@@ -1,17 +1,21 @@
 .material-icons.md-24 {
-  font-size: 40px;
+  font-size: 45px;
   padding: 0 14px;
 }
 .example-spacer {
   flex: 1 1 auto;
 }
 #title{
-  font-size: 30px;
+  font-size: 40px;
 }
 mat-toolbar {
   margin: 0;
   position: relative;
   bottom: 1.3vh;
+  height: 80px;
+}
+mat-toolbar-row{
+  margin-top: 8px;
 }
 mat-toolbar span{
   text-align: center;
@@ -72,13 +76,16 @@ mat-card-content{
   margin-right: 2vw;
 }
 .email_field{
+  min-width: 170px;
   width: 25vw;
+
 }
 .password{
   margin-right: 2vw;
 }
 .password_field{
   width: 25vw;
+  min-width: 170px;
 }
 
 

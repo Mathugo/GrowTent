@@ -1,4 +1,4 @@
-  <app-header></app-header>
+  <app-header *ngIf="authService.isLogged"></app-header>
   <div [@simpleFadeAnimation]="'in'">
   <router-outlet></router-outlet>
   </div>

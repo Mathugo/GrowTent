@@ -32,7 +32,6 @@ export class SigninComponent implements OnInit {
       duration: 2000,
     });
   }
-
   Login() {
     if (this.form.email === '' || this.form.password === '') {
       this.openSnackBar('Please fill out the form', 'Close');
@@ -40,14 +39,16 @@ export class SigninComponent implements OnInit {
       this.loading = true;
       firebase.auth().signInWithEmailAndPassword(this.form.email, this.form.password)
         .then(value => {
-          this.authService.getInfoUser();
-          this.authService.isLogged = true;
-          this.router.navigate(['home']);
-          this.loading = false;
+          this.authService.getInfoUser().then( () => {
+            console.log('Now : ' + this.authService.getCultureName());
+            this.authService.isLogged = true;
+            this.router.navigate(['home']);
+            this.loading = false;
+          });
         })
         .catch(err => {
-          this.openSnackBar("Error please try again", "Close");
-          this.form.email = this.form.password = "";
+          this.openSnackBar('Error please try again', 'Close');
+          this.form.email = this.form.password = '';
           this.loading = false;
         });
     }

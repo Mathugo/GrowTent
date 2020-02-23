@@ -18,3 +18,15 @@
 }
 .material-icons.md-light { color: rgba(255, 255, 255, 1); }
 .material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
+
+.spacer {
+  flex: 1 1 auto;
+}
+.material-icons.face{
+  color: rgba(255, 255, 255, 1);
+  margin-right: 8px;
+  font-size: calc(20px + 0.5vw);
+}
+#name{
+  font-size: calc(12px + 0.5vw);
+}
