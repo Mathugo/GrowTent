@@ -23,7 +23,7 @@ export class AuthServiceService {
   constructor(public router: Router, private db: AngularFirestore) {
   }
   getInfoUser(): Promise<void> {
-    return new Promise<void>(resolve => {
+    return new Promise<any>(resolve => {
       const userId = firebase.auth().currentUser.uid;
       const ref = this.db.collection('users').doc(userId);
       const getDoc = ref.get().subscribe(value => {
