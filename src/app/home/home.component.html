@@ -29,7 +29,9 @@
               <mat-toolbar-row>
                 <mat-icon>toys</mat-icon>
                 <span>Fan speed {{pwm}} %</span>
-                <mat-checkbox class="radio_disabled" color="primary" [(ngModel)]="disable">Auto</mat-checkbox>
+                <mat-checkbox class="radio_disabled" color="primary" [(ngModel)]="disable">
+                  <span>Auto</span>
+                </mat-checkbox>
               </mat-toolbar-row>
             </mat-toolbar>
             <mat-slider class="slider_pwm"
@@ -47,7 +49,7 @@
           <mat-toolbar id="pressure_row">
             <mat-toolbar-row>
               <mat-icon>waves</mat-icon>
-              <span>Pressure 101,325 Pa</span>
+              <span>Pressure 101 Pa</span>
             </mat-toolbar-row>
           </mat-toolbar>
           <mat-progress-bar class="pressure" mode="determinate" value=30></mat-progress-bar>

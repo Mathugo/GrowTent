@@ -31,7 +31,7 @@ export default !firebase.apps.length
 export class AppComponent {
   title = 'GrowTent';
 
-  constructor(private authService: AuthServiceService) {
+  constructor(public authService: AuthServiceService) {
 
 
     /*
