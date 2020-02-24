@@ -1,11 +1,11 @@
 <div [@simpleFadeAnimation]="'in'">
   <div class="webcam-row">
-  <mat-card>
+  <mat-card id="current">
     <mat-card-header>
       <mat-card-title>{{cultureName}}</mat-card-title>
       <span class="spacer"></span>
-      <mat-icon>eco</mat-icon>
-      <mat-card-subtitle>You can observe your baby</mat-card-subtitle>
+      <mat-icon>insert_photo</mat-icon>
+      <mat-card-subtitle>Current image, taken at 3:00</mat-card-subtitle>
     </mat-card-header>
     <img id="currentImg" mat-card-image src="{{currentImgUrl}}" alt="Photo of your plants">
       <mat-card-content>
@@ -20,6 +20,34 @@
     </mat-card-actions>
   </mat-card>
   </div>
+
+  <div class="timelapse-row">
+    <mat-card id="timelapse">
+      <mat-card-header>
+        <mat-card-title>{{cultureName}}</mat-card-title>
+        <span class="spacer"></span>
+        <mat-icon>timelapse</mat-icon>
+        <mat-card-subtitle>timelapse</mat-card-subtitle>
+      </mat-card-header>
+
+      <video mat-card-image src="{{timelapseUrl}}" controls>
+      </video>
+
+      <mat-card-content>
+        <p>
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <a href="{{timelapseUrl}}" download>
+          <button mat-raised-button>DOWNLOAD</button>
+        </a>
+        <button mat-raised-button>SHARE</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+
+
+
 </div>
 <!--
 <mat-card class="card-webcam-lastweek">

@@ -12,6 +12,7 @@ import {transitionAnimation} from '../transition-animation';
 })
 export class WebcamComponent implements OnInit {
   currentImgUrl: string;
+  timelapseUrl: string;
   cultureName: string;
 
   constructor(private storage: AngularFireStorage, private authService: AuthServiceService) { }
@@ -26,8 +27,14 @@ export class WebcamComponent implements OnInit {
     var storage = firebase.storage();
     var ref = storage.ref(uid + "/current.jpg");
     ref.getDownloadURL().then(url => {
-      console.log("Url : "+url);
+      console.log("Url current jpg : "+url);
       this.currentImgUrl = url;
+    });
+    ref = storage.ref(uid + '/test.mp4');
+    ref.getDownloadURL().then(url => {
+      console.log("Url timelapse : "+url);
+      this.timelapseUrl = url;
+      console.log('Timelapse : ' + this.timelapseUrl);
     });
 }
 }

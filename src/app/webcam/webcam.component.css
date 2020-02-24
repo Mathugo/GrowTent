@@ -1,9 +1,23 @@
 .webcam-row{
   text-align: center;
+  display: inline-block;
+  padding: 6px;
+  margin: 3%;
+  width: 40vw;
+  height: 20vh;
+}
+.timelapse-row{
+  text-align: center;
+  display: inline-block;
+  padding: 6px;
+  margin: 3%;
+  width: 40vw;
+  height: 100vh;
+}
+mat-card img{
+ 
 }
 mat-card{
-  width: 30vw;
-  height: 20vh;
   background-color: white;
   margin-top: 5vh;
   display: inline-block; /* Otherwise the img overflow the page and for text-align*/
@@ -14,9 +28,6 @@ mat-card-header{
 }
 mat-card-content{
   color: white;
-}
-mat-card img{
-
 }
 button{
   margin: 2%;
