@@ -4,7 +4,7 @@
       <i *ngIf="route=='home'" class="material-icons md-24">home</i>
       <i *ngIf="route=='graph'" class="material-icons md-24">show_chart</i>
       <i *ngIf="route=='settings'" class="material-icons md-24">settings</i>
-      <i *ngIf="route=='timelapse'" class="material-icons md-24">timelapse</i>
+      <i *ngIf="route=='schedule'" class="material-icons md-24">access_alarm</i>
       <i *ngIf="route=='webcam'" class="material-icons md-24">insert_photo</i>
 
   <button mat-button [matMenuTriggerFor]="menu">
@@ -22,9 +22,9 @@
       <mat-icon>show_chart</mat-icon>
       <span>Graph</span>
     </button>
-    <button *ngIf="route!='timelapse'" mat-menu-item routerLink="/timelapse" routerLinkActive="active">
-      <mat-icon>timelapse</mat-icon>
-      <span>Timelapse</span>
+    <button *ngIf="route!='schedule'" mat-menu-item routerLink="/schedule" routerLinkActive="active">
+      <mat-icon>access_alarm</mat-icon>
+      <span>Schedule</span>
     </button>
     <button *ngIf="route!='webcam'"mat-menu-item routerLink="/webcam" routerLinkActive="active">
       <mat-icon>insert_photo</mat-icon>

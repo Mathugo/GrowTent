@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {RouterModule, RouterOutlet, Routes} from '@angular/router';
+import {RouterModule, Routes} from '@angular/router';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './home/home.component';
@@ -19,10 +19,9 @@ import {
   MatTooltipModule
 } from '@angular/material';
 import {MatIconModule} from '@angular/material/icon';
-import { Router } from '@angular/router';
 import { GraphComponent } from './graph/graph.component';
 import { SettingsComponent } from './settings/settings.component';
-import { TimelapseComponent } from './timelapse/timelapse.component';
+import { ScheduleComponent } from './schedule/schedule.component';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatCardModule} from '@angular/material/card';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
@@ -42,7 +41,7 @@ const appRoutes: Routes = [
   { path: '', redirectTo: '/signin', pathMatch: 'full'},
   { path: 'graph', component: GraphComponent, canActivate: [AuthGuard]},
   { path: 'settings', component: SettingsComponent, canActivate: [AuthGuard]},
-  { path: 'timelapse', component: TimelapseComponent, canActivate: [AuthGuard]},
+  { path: 'schedule', component: ScheduleComponent, canActivate: [AuthGuard]},
   { path: 'webcam', component: WebcamComponent, canActivate: [AuthGuard]},
   { path: '**', component: PageNotFoundComponent },
 
@@ -67,9 +66,9 @@ const firebaseConfig = {
     HeaderComponent,
     GraphComponent,
     SettingsComponent,
-    TimelapseComponent,
     WebcamComponent,
-    FooterComponent
+    FooterComponent,
+    ScheduleComponent
   ],
   exports: [RouterModule],
   imports: [
