@@ -15,7 +15,6 @@ import * as firebase from 'firebase';
 export class HomeComponent implements OnInit {
   color: ThemePalette = 'primary';
   mode: ProgressSpinnerMode = 'determinate';
-  disable = false;
   USER = {
     firstname : '',
     lastname : '',
@@ -25,6 +24,7 @@ export class HomeComponent implements OnInit {
     humidity: 0,
     pressure: 0,
     fan: 0,
+    autoFan: 0
   };
 
   constructor(private db: AngularFirestore, public authService: AuthServiceService) {
@@ -46,5 +46,15 @@ export class HomeComponent implements OnInit {
       fan: this.USER.fan
     });
     console.log('Fan updated : ' + this.USER.fan);
+  }
+  update_autoFan(){
+    console.log('Checked');
+    const uid = firebase.auth().currentUser.uid;
+    const ref = this.db.collection('users').doc(uid);
+    console.log('Collection receive');
+    ref.update({
+      autoFan: this.USER.autoFan
+    });
+    console.log('AutoFan updated : ' + this.USER.autoFan);
   }
 }

@@ -21,7 +21,8 @@ export class AuthServiceService {
     temperature: 0,
     humidity: 0,
     pressure: 0,
-    fan: 0
+    fan: 0,
+    autoFan: 0
   };
 
   constructor(public router: Router, private db: AngularFirestore) {
@@ -43,6 +44,7 @@ export class AuthServiceService {
         this.USER.fan = value.data().fan;
         this.USER.pressure = value.data().pressure;
         this.USER.datePlant = value.data().datePlant.toDate();
+        this.USER.autoFan = value.data().autoFan;
         console.log('Data received');
         resolve('Get OK');
       }

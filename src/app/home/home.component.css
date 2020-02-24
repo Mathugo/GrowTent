@@ -74,10 +74,5 @@ mat-toolbar-row{
   width: 100%;
 }
 .radio_disabled{
-  margin-left: 10%;
-  margin-bottom: 1%;
-  display: inline;
-}
-.row .radio_disabled span{
-  word-break: break-word;
+  margin-left: 12px;
 }

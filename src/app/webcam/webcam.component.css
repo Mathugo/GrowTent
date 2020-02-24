@@ -15,7 +15,7 @@
   height: 100vh;
 }
 mat-card img{
- 
+
 }
 mat-card{
   background-color: white;
@@ -30,7 +30,7 @@ mat-card-content{
   color: white;
 }
 button{
-  margin: 2%;
+  margin: 12px;
 }
 mat-icon{
   padding: 0 8px;

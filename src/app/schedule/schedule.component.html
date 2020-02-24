@@ -1,1 +1,68 @@
-<p>schedule works!</p>
+
+<div class="progression">
+  <mat-horizontal-stepper #stepper>
+    <mat-step  [editable]=false label="Seeding" state="seeding">
+      <div>
+        <p>Your plant is seeking light</p>
+      </div>
+      <div>
+        <button mat-button matStepperNext>My plant is ready</button>
+      </div>
+    </mat-step>
+    <mat-step  [editable]=false label="Vegetation" state="vegetation">
+      <div>
+        <p>It's just the beginning ! </p>
+      </div>
+      <div>
+        <button mat-button matStepperNext>My plant is ready</button>
+        <button mat-button (click)="stepper.reset()">Oups, reset</button>
+      </div>
+    </mat-step>
+    <mat-step  [editable]=false label="Growth" state="growth">
+      <div>
+        <p>Your plant is building nice structure</p>
+      </div>
+      <div>
+      <button mat-button matStepperNext>My plant is ready</button>
+        <button mat-button (click)="stepper.reset()">Oups, reset</button>
+      </div>
+    </mat-step>
+    <mat-step [editable]=false label="Flowering" state="flowering">
+      <div>
+        <p>Almost done !</p>
+      </div>
+      <div>
+      <button mat-button matStepperNext>My plant is ready</button>
+        <button mat-button (click)="stepper.reset()">Oups, reset</button>
+      </div>
+    </mat-step>
+    <mat-step  [editable]=false label="Harvest" state="harvest">
+      <div>
+        <p>You can harvest now</p>
+      </div>
+      <div>
+      <button mat-button matStepperNext>My plant is reading</button>
+        <button mat-button (click)="stepper.reset()">Oups, reset</button>
+      </div>
+    </mat-step>
+
+  <!-- ICON -->
+    <ng-template matStepperIcon="seeding">
+      <mat-icon>local_drink</mat-icon>
+    </ng-template>
+    <ng-template matStepperIcon="vegetation">
+      <mat-icon>eco</mat-icon>
+    </ng-template>
+    <ng-template matStepperIcon="growth">
+      <mat-icon>spa</mat-icon>
+    </ng-template>
+    <ng-template matStepperIcon="flowering">
+      <mat-icon>local_florist</mat-icon>
+    </ng-template>
+    <ng-template matStepperIcon="harvest">
+      <mat-icon>filter_vintage</mat-icon>
+    </ng-template>
+  </mat-horizontal-stepper>
+
+  <!-- mat-icon timeline -->
+</div>

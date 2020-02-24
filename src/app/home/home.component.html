@@ -32,10 +32,10 @@
             <mat-toolbar>
               <mat-toolbar-row>
                 <mat-icon>toys</mat-icon>
-                <span>Fan speed {{USER.fan}} %</span>
+                <span>Fan speed {{USER.fan}} %</span><!--
                 <mat-checkbox class="radio_disabled" color="primary" [(ngModel)]="disable">
                   <span>Auto</span>
-                </mat-checkbox>
+                </mat-checkbox>-->
               </mat-toolbar-row>
             </mat-toolbar>
             <mat-slider class="slider_pwm"
@@ -47,7 +47,7 @@
                           value={{USER.fan}}
                           [(ngModel)]="USER.fan"
                           (change)="update_fan()"
-                          [disabled]="disable">
+                          [disabled]="USER.autoFan">
               </mat-slider>
           </div>
         <div class="row">
@@ -69,6 +69,16 @@
                                   [value]="value">
             </mat-progress-spinner>
         </div> -->
+
+        <div class="row">
+          <mat-toolbar id="auto_fan">
+            <mat-toolbar-row>
+              <mat-icon>autorenew</mat-icon>
+                <span>Auto Fan</span>
+              <mat-checkbox class="radio_disabled" color="primary" (click)="update_autoFan()" [(ngModel)]="USER.autoFan"></mat-checkbox>
+            </mat-toolbar-row>
+          </mat-toolbar>
+        </div>
       </mat-card-content>
     </mat-card>
 

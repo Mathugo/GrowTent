@@ -8,14 +8,13 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { SigninComponent } from './signin/signin.component';
 import { HeaderComponent } from './header/header.component';
 import { AuthServiceService} from './service/auth-service.service';
-
 import {
   MatButtonModule, MatCheckboxModule, MatDividerModule,
   MatExpansionModule,
   MatFormFieldModule,
   MatInputModule,
   MatMenuModule, MatProgressSpinnerModule,
-  MatSliderModule, MatSnackBarModule, MatToolbarModule,
+  MatSliderModule, MatSnackBarModule, MatStepperModule, MatToolbarModule,
   MatTooltipModule
 } from '@angular/material';
 import {MatIconModule} from '@angular/material/icon';
@@ -98,7 +97,8 @@ const firebaseConfig = {
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
     AngularFireStorageModule,
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    MatStepperModule
   ],
   providers: [AuthServiceService],
   bootstrap: [AppComponent]
