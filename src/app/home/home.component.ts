@@ -15,6 +15,8 @@ import * as firebase from 'firebase';
 export class HomeComponent implements OnInit {
   color: ThemePalette = 'primary';
   mode: ProgressSpinnerMode = 'determinate';
+  autoFan: boolean;
+  count =  0;
   USER = {
     firstname : '',
     lastname : '',
@@ -24,7 +26,6 @@ export class HomeComponent implements OnInit {
     humidity: 0,
     pressure: 0,
     fan: 0,
-    autoFan: 0
   };
 
   constructor(private db: AngularFirestore, public authService: AuthServiceService) {
@@ -32,7 +33,9 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
   this.USER = this.authService.getUserProfile();
+  this.autoFan = this.authService.getAutoFan();
   console.log('User profile done');
+  console.log('AutoFan : ' + this.autoFan);
   }
   pourcentage(value: number): string {
    return value + '%';
@@ -52,9 +55,17 @@ export class HomeComponent implements OnInit {
     const uid = firebase.auth().currentUser.uid;
     const ref = this.db.collection('users').doc(uid);
     console.log('Collection receive');
-    ref.update({
-      autoFan: this.USER.autoFan
-    });
-    console.log('AutoFan updated : ' + this.USER.autoFan);
+    if (this.count === 0) { // IMPORTANT THE FIRST CHECKED IS BUGGED SO MANUALLY CHANGED
+      ref.update({
+        autoFan: !this.autoFan
+      });
+      this.count++;
+      console.log('First count : ' + this.autoFan);
+    } else {
+      ref.update({
+        autoFan: this.autoFan
+      });
+    }
+    console.log('AutoFan updated : ' + this.autoFan);
   }
 }

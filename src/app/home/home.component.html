@@ -47,7 +47,7 @@
                           value={{USER.fan}}
                           [(ngModel)]="USER.fan"
                           (change)="update_fan()"
-                          [disabled]="USER.autoFan">
+                          [disabled]="autoFan">
               </mat-slider>
           </div>
         <div class="row">
@@ -75,7 +75,7 @@
             <mat-toolbar-row>
               <mat-icon>autorenew</mat-icon>
                 <span>Auto Fan</span>
-              <mat-checkbox class="radio_disabled" color="primary" (click)="update_autoFan()" [(ngModel)]="USER.autoFan"></mat-checkbox>
+              <mat-checkbox class="radio_disabled" color="primary" (click)="update_autoFan()" [(ngModel)]="autoFan"></mat-checkbox>
             </mat-toolbar-row>
           </mat-toolbar>
         </div>

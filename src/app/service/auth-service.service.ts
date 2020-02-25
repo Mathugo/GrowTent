@@ -9,10 +9,9 @@ import {AngularFirestore} from '@angular/fire/firestore';
   providedIn: 'root'
 })
 export class AuthServiceService {
-  user;
-  email = '';
   isLogged = false;
   redirectUrl: string;
+  autoFan: boolean;
   USER = {
     firstname : '',
     lastname : '',
@@ -22,7 +21,6 @@ export class AuthServiceService {
     humidity: 0,
     pressure: 0,
     fan: 0,
-    autoFan: 0
   };
 
   constructor(public router: Router, private db: AngularFirestore) {
@@ -44,7 +42,7 @@ export class AuthServiceService {
         this.USER.fan = value.data().fan;
         this.USER.pressure = value.data().pressure;
         this.USER.datePlant = value.data().datePlant.toDate();
-        this.USER.autoFan = value.data().autoFan;
+        this.autoFan = value.data().autoFan;
         console.log('Data received');
         resolve('Get OK');
       }
@@ -58,6 +56,7 @@ export class AuthServiceService {
   getLastName() { return this.USER.lastname; }
   getCultureName() { return this.USER.cultureName; }
   getDatePlant() { return this.USER.datePlant; }
+  getAutoFan() { return this.autoFan; }
 
   logout() {
     firebase.auth().signOut()
