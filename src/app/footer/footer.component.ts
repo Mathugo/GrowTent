@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, VERSION } from '@angular/core';
 import {transitionAnimation} from '../transition-animation';
 
 @Component({
@@ -8,7 +8,8 @@ import {transitionAnimation} from '../transition-animation';
   animations: [transitionAnimation]
 })
 export class FooterComponent implements OnInit {
-
+  ngVersion: string = VERSION.full;
+  matVersion: string = '5.1.0'
   constructor() { }
 
   ngOnInit(): void {

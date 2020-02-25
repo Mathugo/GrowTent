@@ -29,7 +29,7 @@
   font-size: calc(8px + 1vw);
 }
 .separator{
-  border-left: 2px solid white;
+  border-left: 1px solid darkgrey;
   border-radius: 2px;
   height: 30px;
   margin: 12px;

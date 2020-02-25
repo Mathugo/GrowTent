@@ -40,7 +40,7 @@ const appRoutes: Routes = [
   { path: '', redirectTo: '/signin', pathMatch: 'full'},
   { path: 'graph', component: GraphComponent, canActivate: [AuthGuard]},
   { path: 'settings', component: SettingsComponent, canActivate: [AuthGuard]},
-  { path: 'schedule', component: ScheduleComponent, canActivate: [AuthGuard]},
+  { path: 'schedule', component: ScheduleComponent}, // canActivate: [AuthGuard]},
   { path: 'webcam', component: WebcamComponent, canActivate: [AuthGuard]},
   { path: '**', component: PageNotFoundComponent },
 

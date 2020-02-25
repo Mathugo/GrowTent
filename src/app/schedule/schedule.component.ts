@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {STEPPER_GLOBAL_OPTIONS} from '@angular/cdk/stepper';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {MatStepper} from '@angular/material';
+import {AuthServiceService} from '../service/auth-service.service';
 
 @Component({
   selector: 'app-schedule',
@@ -11,30 +13,33 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
   }]
 })
 export class ScheduleComponent implements OnInit {
-  firstFormGroup: FormGroup;
-  secondFormGroup: FormGroup;
-  thirdFormGroup: FormGroup;
-  fourthFormGroup: FormGroup;
-  fifthFormGroup: FormGroup;
-
-  constructor(private _formBuilder: FormBuilder) { }
+  @ViewChild('stepper') stepper: MatStepper;
+  isLinear: boolean;
+  isEditable: boolean;
+  stateGrowth: number;
+  selectedIndex: number;
+  constructor(private authService: AuthServiceService) { }
 
   ngOnInit(): void {
-    this.firstFormGroup = this._formBuilder.group({
-      firstCtrl: ['', Validators.required]
-    });
-    this.secondFormGroup = this._formBuilder.group({
-      secondCtrl: ['', Validators.required]
-    });
-    this.thirdFormGroup = this._formBuilder.group({
-      thirdCtrl: ['', Validators.required]
-    });
-    this.fourthFormGroup = this._formBuilder.group({
-      fourthCtrl: ['', Validators.required]
-    });
-    this.fifthFormGroup = this._formBuilder.group({
-      fifthCtrl: ['', Validators.required]
-    });
+    this.isLinear = false;
+    this.isEditable = true;
+    this.stateGrowth = this.authService.getStateGrowth();
+    console.log("STATE : "+this.stateGrowth);
+    this.selectedIndex = this.stateGrowth;
+    this.isLinear = false;
+    this.isEditable = true;
+  }
+  move(index: number) {
+    this.stepper.selectedIndex = index;
   }
 
+  selectionChange(stepper: MatStepper)
+  {
+    console.log("Index : "+this.stepper.selectedIndex);
+  }
+  next(): void {
+    this.stepper.linear = false;
+    this.stepper.selectedIndex++;
+    this.stepper.linear = true;
+  }
 }

@@ -26,7 +26,7 @@ mat-card{
   width: 55vw;
   height: 55vh;
   min-width: 270px;
-  min-height: 300px;
+  min-height: 250px;
 }
 mat-card-header{
   text-align: center;

@@ -21,6 +21,7 @@ export class AuthServiceService {
     humidity: 0,
     pressure: 0,
     fan: 0,
+    stateGrowth: 1
   };
 
   constructor(public router: Router, private db: AngularFirestore) {
@@ -43,6 +44,7 @@ export class AuthServiceService {
         this.USER.pressure = value.data().pressure;
         this.USER.datePlant = value.data().datePlant.toDate();
         this.autoFan = value.data().autoFan;
+        this.USER.stateGrowth = value.data().stateGrowth;
         console.log('Data received');
         resolve('Get OK');
       }
@@ -57,6 +59,7 @@ export class AuthServiceService {
   getCultureName() { return this.USER.cultureName; }
   getDatePlant() { return this.USER.datePlant; }
   getAutoFan() { return this.autoFan; }
+  getStateGrowth() { return this.USER.stateGrowth;}
 
   logout() {
     firebase.auth().signOut()

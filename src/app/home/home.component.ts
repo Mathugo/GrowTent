@@ -26,6 +26,7 @@ export class HomeComponent implements OnInit {
     humidity: 0,
     pressure: 0,
     fan: 0,
+    stateGrowth: 0
   };
 
   constructor(private db: AngularFirestore, public authService: AuthServiceService) {
