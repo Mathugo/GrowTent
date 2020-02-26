@@ -8,13 +8,15 @@
 
   <mat-card>
     <mat-card-header>
-      <mat-card-title>Signin</mat-card-title>
-      <mat-icon id="face">face</mat-icon>
+      <mat-card-title>
+        <mat-icon id="login_icon">account_circle</mat-icon>
+        Signin
+      </mat-card-title>
       <mat-card-subtitle>Please fill out the form to signin into GrowTent</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
       <div class="email">
-        <mat-icon id="login_icon">account_circle</mat-icon>
+        <mat-icon id="face">face</mat-icon>
         <mat-form-field class="email_field">
           <input matInput type="text" placeholder="Email" [(ngModel)]="form.email">
           <button mat-button *ngIf="form.email" matSuffix mat-icon-button aria-label="Clear" (click)="form.email=''">

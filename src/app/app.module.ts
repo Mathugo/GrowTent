@@ -9,14 +9,15 @@ import { SigninComponent } from './signin/signin.component';
 import { HeaderComponent } from './header/header.component';
 import { AuthServiceService} from './service/auth-service.service';
 import {
-  MatButtonModule, MatCheckboxModule, MatDividerModule,
+  MatButtonModule, MatCheckboxModule, MatDatepickerModule, MatDividerModule,
   MatExpansionModule,
   MatFormFieldModule,
   MatInputModule,
   MatMenuModule, MatProgressSpinnerModule,
   MatSliderModule, MatSnackBarModule, MatStepperModule, MatToolbarModule,
-  MatTooltipModule
+  MatTooltipModule, MatNativeDateModule
 } from '@angular/material';
+import { MAT_NATIVE_DATE_FORMATS} from '@angular/material';
 import {MatIconModule} from '@angular/material/icon';
 import { GraphComponent } from './graph/graph.component';
 import { SettingsComponent } from './settings/settings.component';
@@ -40,21 +41,21 @@ const appRoutes: Routes = [
   { path: '', redirectTo: '/signin', pathMatch: 'full'},
   { path: 'graph', component: GraphComponent, canActivate: [AuthGuard]},
   { path: 'settings', component: SettingsComponent, canActivate: [AuthGuard]},
-  { path: 'schedule', component: ScheduleComponent}, // canActivate: [AuthGuard]},
+  { path: 'schedule', component: ScheduleComponent, canActivate: [AuthGuard]},
   { path: 'webcam', component: WebcamComponent, canActivate: [AuthGuard]},
   { path: '**', component: PageNotFoundComponent },
 
 ];
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAcRUgZHPKUJ-n5Ax14j_wPgkvIF9vJKp4",
-  authDomain: "growtent-111ca.firebaseapp.com",
-  databaseURL: "https://growtent-111ca.firebaseio.com",
-  projectId: "growtent-111ca",
-  storageBucket: "growtent-111ca.appspot.com",
-  messagingSenderId: "205033270083",
-  appId: "1:205033270083:web:e31d66f9a1ccac5c705df6",
-  measurementId: "G-3ZXE38JVHE"
+  apiKey: 'AIzaSyAcRUgZHPKUJ-n5Ax14j_wPgkvIF9vJKp4',
+  authDomain: 'growtent-111ca.firebaseapp.com',
+  databaseURL: 'https://growtent-111ca.firebaseio.com',
+  projectId: 'growtent-111ca',
+  storageBucket: 'growtent-111ca.appspot.com',
+  messagingSenderId: '205033270083',
+  appId: '1:205033270083:web:e31d66f9a1ccac5c705df6',
+  measurementId: 'G-3ZXE38JVHE'
 };
 @NgModule({
   declarations: [
@@ -98,9 +99,11 @@ const firebaseConfig = {
     AngularFireDatabaseModule,
     AngularFireStorageModule,
     AngularFirestoreModule,
-    MatStepperModule
+    MatStepperModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
-  providers: [AuthServiceService],
+  providers: [AuthServiceService, MatDatepickerModule],
   bootstrap: [AppComponent]
 })
 

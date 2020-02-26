@@ -31,9 +31,15 @@ mat-card{
 mat-card-header{
   text-align: center;
   position: relative;
-  margin-left: 16vw;
-  margin-right: 10vw;
-  margin-top: 1vh;
+
+}
+mat-card-title{
+  text-align: center;
+  width: 54vw;
+}
+mat-card-subtitle{
+  text-align: center;
+  width: 54vw;
 }
 mat-card-actions{
   text-align: center;
@@ -47,21 +53,19 @@ mat-card-content{
   margin-top: 1vh;
   margin-right: 1vw;
 }
-#face {
-  padding: 0 14px;
-  margin-right: 2%;
-  position: relative;
-  left: 12vw;
-
-}
 #login_icon{
   position: relative;
-  top: 2vh;
+  top: 0.5vh;
+  margin-right: 2px;
+}
+#face{
+  position: relative;
+  top: 1.3vh;
   margin-right: 1vw;
 }
 #pwd_icon{
   position: relative;
-  top: 2vh;
+  top: 1vh;
   margin-right: 1vw;
 }
 #submit{

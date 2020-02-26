@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ProgressSpinnerMode, ThemePalette} from '@angular/material';
+import {MatDatepickerInputEvent, ProgressSpinnerMode, ThemePalette} from '@angular/material';
 import {AngularFirestore} from '@angular/fire/firestore';
 import {transitionAnimation} from '../transition-animation';
 import {AuthServiceService} from '../service/auth-service.service';
@@ -16,6 +16,8 @@ export class HomeComponent implements OnInit {
   color: ThemePalette = 'primary';
   mode: ProgressSpinnerMode = 'determinate';
   autoFan: boolean;
+  estimateHarvestDay: Date;
+  TimePlantDay = 84;
   count =  0;
   USER = {
     firstname : '',
@@ -37,9 +39,16 @@ export class HomeComponent implements OnInit {
   this.autoFan = this.authService.getAutoFan();
   console.log('User profile done');
   console.log('AutoFan : ' + this.autoFan);
+  this.DoEstimatedDate();
+
   }
   pourcentage(value: number): string {
    return value + '%';
+  }
+  DoEstimatedDate() {
+    const newDate = new Date(this.USER.datePlant.toString()).getTime() + this.TimePlantDay * 24 * 60 * 60 * 1000;
+    this.estimateHarvestDay = new Date(newDate);
+    console.log('Estimated : ' + this.estimateHarvestDay.toString());
   }
   update_fan() {
     console.log('MOVE');
@@ -68,5 +77,8 @@ export class HomeComponent implements OnInit {
       });
     }
     console.log('AutoFan updated : ' + this.autoFan);
+  }
+  changeDatePlant(event: MatDatepickerInputEvent<Date>) {
+    console.log("Date : " + event.value);
   }
 }

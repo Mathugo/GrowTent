@@ -13,10 +13,14 @@
       </p>
     </mat-card-content>
     <mat-card-actions>
-      <a href="{{currentImgUrl}}" download>
-      <button mat-raised-button>DOWNLOAD</button>
+      <a href="{{timelapseUrl}}" download>
+        <button mat-icon-button aria-label="download">
+          <mat-icon>cloud_download</mat-icon>
+        </button>
       </a>
-      <button mat-raised-button>SHARE</button>
+      <button mat-icon-button aria-label="share">
+        <mat-icon>share</mat-icon>
+      </button>
     </mat-card-actions>
   </mat-card>
   </div>
@@ -39,14 +43,16 @@
       </mat-card-content>
       <mat-card-actions>
         <a href="{{timelapseUrl}}" download>
-          <button mat-raised-button>DOWNLOAD</button>
+          <button mat-icon-button color="primary" aria-label="download">
+            <mat-icon>cloud_download</mat-icon>
+          </button>
         </a>
-        <button mat-raised-button>SHARE</button>
+        <button mat-icon-button aria-label="share">
+          <mat-icon>share</mat-icon>
+        </button>
       </mat-card-actions>
     </mat-card>
   </div>
-
-
 
 </div>
 <!--

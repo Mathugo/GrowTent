@@ -6,7 +6,8 @@
         <mat-card-subtitle>On this page you will catch basic informations such as temperature, humidity, fan speed</mat-card-subtitle>
         <mat-card-subtitle>
           <mat-icon id="date_range_icon">date_range</mat-icon>
-          Planted the {{USER.datePlant | date: 'medium'}}
+          Estimated harvest day {{estimateHarvestDay | date: 'medium'}}<br>
+          <p>Planted the {{USER.datePlant | date: 'medium'}}</p>
         </mat-card-subtitle>
       </mat-card-header>
       <mat-card-content>
@@ -32,10 +33,7 @@
             <mat-toolbar>
               <mat-toolbar-row>
                 <mat-icon>toys</mat-icon>
-                <span>Fan speed {{USER.fan}} %</span><!--
-                <mat-checkbox class="radio_disabled" color="primary" [(ngModel)]="disable">
-                  <span>Auto</span>
-                </mat-checkbox>-->
+                <span>Fan speed {{USER.fan}} %</span>
               </mat-toolbar-row>
             </mat-toolbar>
             <mat-slider class="slider_pwm"
@@ -59,17 +57,6 @@
           </mat-toolbar>
           <mat-progress-bar class="pressure" mode="determinate" value=30></mat-progress-bar>
         </div>
-        <!--
-        <div class="row">
-            <mat-icon>done</mat-icon>
-            <span>{{value}}% before finished</span>
-            <mat-progress-spinner class="spinner"
-                                  [color]="color"
-                                  [mode]="mode"
-                                  [value]="value">
-            </mat-progress-spinner>
-        </div> -->
-
         <div class="row">
           <mat-toolbar id="auto_fan">
             <mat-toolbar-row>
@@ -84,3 +71,7 @@
 
   <!-- Mettre spinner progress pour temps avant finir, mettre date de plantation et fin -->
 </div>
+<!--
+         <input matInput (dateChange)="changeDatePlant($event)" [matDatepicker]="picker" disabled>
+           <mat-datepicker-toggle matTooltip="Change the initial date !" matSuffix [for]="picker"></mat-datepicker-toggle>
+           <mat-datepicker disabled="false" color="primary" touchUi #picker></mat-datepicker> -->
