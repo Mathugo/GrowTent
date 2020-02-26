@@ -20,7 +20,7 @@
       </div>
       <div>
         <button mat-raised-button color="primary" (click)="next()">My plant is ready</button>
-        <button mat-raised-button color="warn" (click)="stepper.reset()">Oups, reset</button>
+        <button mat-raised-button color="warn" (click)="reset()">Oups, reset</button>
       </div>
     </mat-step>
     <mat-step  [editable]=isEditable label="Growth" state="growth">
@@ -29,7 +29,7 @@
       </div>
       <div>
       <button mat-raised-button color="primary" (click)="next()">My plant is ready</button>
-        <button  mat-raised-button color="warn" (click)="stepper.reset()">Oups, reset</button>
+        <button  mat-raised-button color="warn" (click)="reset()">Oups, reset</button>
       </div>
     </mat-step>
     <mat-step [editable]=isEditable label="Flowering" state="flowering">
@@ -38,7 +38,7 @@
       </div>
       <div>
       <button  mat-raised-button color="primary" (click)="next()">My plant is ready</button>
-        <button  mat-raised-button color="warn" (click)="stepper.reset()">Oups, reset</button>
+        <button  mat-raised-button color="warn" (click)="reset()">Oups, reset</button>
       </div>
     </mat-step>
     <mat-step  [editable]=isEditable label="Harvest" state="harvest">
@@ -47,7 +47,7 @@
       </div>
       <div>
       <button mat-raised-button color="primary" (click)="next()">My plant is reading</button>
-        <button mat-raised-button color="warn" (click)="stepper.reset()">Oups, reset</button>
+        <button mat-raised-button color="warn" (click)="reset()">Oups, reset</button>
       </div>
     </mat-step>
 

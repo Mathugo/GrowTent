@@ -61,6 +61,16 @@ export class AuthServiceService {
   getAutoFan() { return this.autoFan; }
   getStateGrowth() { return this.USER.stateGrowth;}
 
+  updateStateGrowth(state: number) {
+    const uid = firebase.auth().currentUser.uid;
+    const ref = this.db.collection('users').doc(uid);
+    console.log('Collection receive');
+    ref.update({
+      stateGrowth: state
+    });
+    console.log('Updated growth state to ' + state);
+  }
+
   logout() {
     firebase.auth().signOut()
       .then(value => {

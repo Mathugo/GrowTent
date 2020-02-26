@@ -26,8 +26,8 @@ export class ScheduleComponent implements OnInit {
     this.stateGrowth = this.authService.getStateGrowth();
     console.log("STATE : "+this.stateGrowth);
     this.selectedIndex = this.stateGrowth;
-    this.isLinear = false;
-    this.isEditable = true;
+    this.isLinear = true;
+    this.isEditable = false;
   }
   move(index: number) {
     this.stepper.selectedIndex = index;
@@ -35,11 +35,22 @@ export class ScheduleComponent implements OnInit {
 
   selectionChange(stepper: MatStepper)
   {
-    console.log("Index : "+this.stepper.selectedIndex);
+    console.log("Selection changed");
+    console.log("Index selection changed : "+this.stepper.selectedIndex);
+    this.authService.updateStateGrowth(this.stepper.selectedIndex + 1);
   }
   next(): void {
     this.stepper.linear = false;
     this.stepper.selectedIndex++;
+    console.log("Index next: "+this.stepper.selectedIndex);
     this.stepper.linear = true;
+  }
+  reset(): void {
+    console.log("Reset !");
+    this.stepper.linear = false;
+    this.stepper.reset();
+    this.stepper.linear = true;
+    this.isEditable = false;
+    this.authService.updateStateGrowth(0);
   }
 }
