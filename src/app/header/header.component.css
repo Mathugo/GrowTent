@@ -3,12 +3,15 @@
 }
 .header .page{
   color: white;
-  font-size: calc(20px + 1.2vw);
+  font-size: calc(18px + 1.2vw);
 }
 .material-icons.md-24{
   color: rgba(255, 255, 255, 1);
 /*  padding: 0 14px;*/
-  font-size: calc(28px + 1vw);
+  font-size: calc(26px + 1vw);
+  position: relative;
+  bottom: 1px;
+  left: 5px;
 }
 #more_vert{
   margin: 2%;
@@ -23,10 +26,10 @@
 .material-icons.face{
   color: rgba(255, 255, 255, 1);
   margin-right: 8px;
-  font-size: calc(20px + 0.5vw);
+  font-size: calc(18px + 0.5vw);
 }
 .name{
-  font-size: calc(8px + 1vw);
+  font-size: calc(6px + 1vw);
 }
 .separator{
   border-left: 1px solid darkgrey;

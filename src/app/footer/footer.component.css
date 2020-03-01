@@ -19,7 +19,7 @@ mat-toolbar{
 font-size: calc(8px + 0.5vw);
 }
 #copyright{
-  font-size: calc(4px + 0.5vw);
+  font-size: calc(6px + 0.5vw);
   margin-right: 3vw;
 }
 .example-spacer {

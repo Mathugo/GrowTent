@@ -24,14 +24,14 @@ mat-card{
   margin: 0 auto;
   top: 10vh;
   width: 55vw;
-  height: 55vh;
+  /*height: 55vh;*/
+  height: 310px;
   min-width: 270px;
-  min-height: 250px;
+  min-height: 200px;
 }
 mat-card-header{
   text-align: center;
   position: relative;
-
 }
 mat-card-title{
   text-align: center;
