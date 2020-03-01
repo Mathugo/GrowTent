@@ -70,8 +70,8 @@ mat-card-content{
 }
 #submit{
   width: 15vw;
-  min-width: 80px;
-  height: 10vh;
+  min-width: 90px;
+  height: 9vh;
   font-size: calc(12px + 0.7vw);
   text-align: center;
 }
@@ -99,8 +99,9 @@ mat-card-content{
 
 .gooey {
   position: absolute;
-  top: 60%;
+  top: 80%;
   left: 50%;
+
   width: 142px;
   height: 40px;
   margin: -20px 0 0 -71px;
@@ -114,7 +115,7 @@ mat-card-content{
   top: 12px;
   left: 15px;
   filter: blur(4px);
-  background: #000;
+   background: #000;
   border-radius: 50%;
   transform: translateX(0);
   animation: dot 2.8s infinite;
@@ -166,3 +167,42 @@ span .gooey{
   }
 }
 
+.lds-ring {
+  text-align: center;
+  display: inline-block;
+  position: relative;
+  right: 0.7vw;
+  bottom: 1.3vh;
+  width: 50px;
+  height: 50px;
+}
+.lds-ring div {
+  text-align: center;
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  margin: 8px;
+  border: 8px solid #fff;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #fff transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

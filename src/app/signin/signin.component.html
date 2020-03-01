@@ -35,10 +35,19 @@
       </div>
     </mat-card-content>
     <mat-card-actions>
-        <button id="submit" mat-raised-button matTooltip="Log you !" color="primary" (click)=Login()>Submit</button>
+        <button id="submit" mat-raised-button matTooltip="Log you !" color="primary" (click)=Login()>
+          <div *ngIf="loading; else elseBlock" class="lds-ring"><div></div><div></div><div></div><div></div></div>
+          <ng-template #elseBlock>Submit</ng-template>
+        </button>
     </mat-card-actions>
-  </mat-card>
 
+  </mat-card>
+</div>
+
+
+
+
+  <!--
   <div class="gooey" *ngIf="loading">
     <span class="dot"></span>
     <div class="dots">
@@ -48,3 +57,4 @@
     </div>
   </div>
 </div>
+-->

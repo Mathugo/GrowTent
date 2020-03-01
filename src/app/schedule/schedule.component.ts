@@ -3,6 +3,7 @@ import {STEPPER_GLOBAL_OPTIONS} from '@angular/cdk/stepper';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {MatStepper} from '@angular/material';
 import {AuthServiceService} from '../service/auth-service.service';
+import {transitionAnimation} from '../transition-animation';
 
 
 @Component({
@@ -11,7 +12,8 @@ import {AuthServiceService} from '../service/auth-service.service';
   styleUrls: ['./schedule.component.css'],
   providers: [{
     provide: STEPPER_GLOBAL_OPTIONS, useValue: {displayDefaultIndicatorType: false}
-  }]
+  }],
+  animations: [transitionAnimation]
 })
 export class ScheduleComponent implements OnInit {
   @ViewChild('stepper') stepper: MatStepper;

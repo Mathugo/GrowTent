@@ -1,5 +1,5 @@
 
-<div *ngIf="screenWidth>700; else elseBlock" class="progression" >
+<div [@simpleFadeAnimation]="'in'" *ngIf="screenWidth>700; else elseBlock" class="progression" >
   <mat-horizontal-stepper
     [selectedIndex]="this.selectedIndex"
     [linear]="isLinear"
@@ -76,7 +76,7 @@
     </mat-horizontal-stepper>
 </div>
 <ng-template #elseBlock>
-  <div class="progression">
+  <div [@simpleFadeAnimation]="'in'" class="progression">
     <mat-vertical-stepper
       [selectedIndex]="this.selectedIndex"
       [linear]="isLinear"
