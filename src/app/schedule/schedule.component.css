@@ -13,6 +13,14 @@
   border-radius: 2px;
   border-left: 6px solid rebeccapurple;
 }
+.progression mat-vertical-stepper{
+  text-align: center;
+  display: inline-block;
+  width: 70vw;
+  min-width: 345px;
+  border-radius: 2px;
+  border-left: 6px solid rebeccapurple;
+}
 
 .progression button{
   margin: 2%;

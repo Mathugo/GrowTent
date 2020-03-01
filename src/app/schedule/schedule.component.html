@@ -1,6 +1,5 @@
 
-<div class="progression">
-
+<div *ngIf="screenWidth>700; else elseBlock" class="progression" >
   <mat-horizontal-stepper
     [selectedIndex]="this.selectedIndex"
     [linear]="isLinear"
@@ -9,6 +8,7 @@
     <mat-step  [editable]=isEditable label="Seeding" state="seeding">
       <div>
         <p>Your plant is seeking light</p>
+        <h4>Day +{{plusDay}}</h4>
       </div>
       <div>
         <button mat-raised-button color="primary" matStepperNext>My plant is ready</button>
@@ -17,6 +17,7 @@
     <mat-step  [editable]=isEditable label="Vegetation" state="vegetation">
       <div>
         <p>It's just the beginning ! </p>
+        <h4>Day +{{plusDay}}</h4>
       </div>
       <div>
         <button mat-raised-button color="primary" (click)="next()">My plant is ready</button>
@@ -26,6 +27,7 @@
     <mat-step  [editable]=isEditable label="Growth" state="growth">
       <div>
         <p>Your plant is building nice structure</p>
+        <h4>Day +{{plusDay}}</h4>
       </div>
       <div>
       <button mat-raised-button color="primary" (click)="next()">My plant is ready</button>
@@ -35,6 +37,7 @@
     <mat-step [editable]=isEditable label="Flowering" state="flowering">
       <div>
         <p>Almost done !</p>
+        <h4>Day +{{plusDay}}</h4>
       </div>
       <div>
       <button  mat-raised-button color="primary" (click)="next()">My plant is ready</button>
@@ -44,6 +47,7 @@
     <mat-step  [editable]=isEditable label="Harvest" state="harvest">
       <div>
         <p>You can harvest now</p>
+        <h4>Day +{{plusDay}}</h4>
       </div>
       <div>
       <button mat-raised-button color="primary" (click)="next()">My plant is reading</button>
@@ -68,22 +72,85 @@
     <ng-template matStepperIcon="harvest">
       <mat-icon>filter_vintage</mat-icon>
     </ng-template>
-  </mat-horizontal-stepper>
-<!--
-  <mat-horizontal-stepper linear #stepper>
-    <mat-step [editable]=false label="Step 1">
-      Step 1
-    </mat-step>
-    <mat-step [editable]=false label="Step 2">
-      Step 2
-    </mat-step>
-    <mat-step [editable]=false label="Step 3">
-      Step 3
-    </mat-step>
-    <mat-step [editable]=false label="Step 4">
-      Step 4
-    </mat-step>
-  </mat-horizontal-stepper>
--->
-   <!-- mat-icon timeline -->
+
+    </mat-horizontal-stepper>
 </div>
+<ng-template #elseBlock>
+  <div class="progression">
+    <mat-vertical-stepper
+      [selectedIndex]="this.selectedIndex"
+      [linear]="isLinear"
+      (selectionChange)="selectionChange(stepper)"
+      #stepper>
+      <mat-step  [editable]=isEditable label="Seeding" state="seeding">
+        <div>
+          <p>Your plant is seeking light</p>
+          <h4>Day +{{plusDay}}</h4>
+        </div>
+        <div>
+          <button mat-raised-button color="primary" matStepperNext>My plant is ready</button>
+        </div>
+      </mat-step>
+      <mat-step  [editable]=isEditable label="Vegetation" state="vegetation">
+        <div>
+          <p>It's just the beginning ! </p>
+          <h4>Day +{{plusDay}}</h4>
+        </div>
+        <div>
+          <button mat-raised-button color="primary" (click)="next()">My plant is ready</button>
+          <button mat-raised-button color="warn" (click)="reset()">Oups, reset</button>
+        </div>
+      </mat-step>
+      <mat-step  [editable]=isEditable label="Growth" state="growth">
+        <div>
+          <p>Your plant is building nice structure</p>
+          <h4>Day +{{plusDay}}</h4>
+        </div>
+        <div>
+          <button mat-raised-button color="primary" (click)="next()">My plant is ready</button>
+          <button  mat-raised-button color="warn" (click)="reset()">Oups, reset</button>
+        </div>
+      </mat-step>
+      <mat-step [editable]=isEditable label="Flowering" state="flowering">
+        <div>
+          <p>Almost done !</p>
+          <h4>Day +{{plusDay}}</h4>
+        </div>
+        <div>
+          <button  mat-raised-button color="primary" (click)="next()">My plant is ready</button>
+          <button  mat-raised-button color="warn" (click)="reset()">Oups, reset</button>
+        </div>
+      </mat-step>
+      <mat-step  [editable]=isEditable label="Harvest" state="harvest">
+        <div>
+          <p>You can harvest now</p>
+          <h4>Day +{{plusDay}}</h4>
+        </div>
+        <div>
+          <button mat-raised-button color="primary" (click)="next()">My plant is reading</button>
+          <button mat-raised-button color="warn" (click)="reset()">Oups, reset</button>
+        </div>
+      </mat-step>
+
+      <!-- ICON -->
+
+      <ng-template matStepperIcon="seeding">
+        <mat-icon>local_drink</mat-icon>
+      </ng-template>
+      <ng-template matStepperIcon="vegetation">
+        <mat-icon>eco</mat-icon>
+      </ng-template>
+      <ng-template matStepperIcon="growth">
+        <mat-icon>spa</mat-icon>
+      </ng-template>
+      <ng-template matStepperIcon="flowering">
+        <mat-icon>local_florist</mat-icon>
+      </ng-template>
+      <ng-template matStepperIcon="harvest">
+        <mat-icon>filter_vintage</mat-icon>
+      </ng-template>
+
+    </mat-vertical-stepper>
+  </div>
+
+</ng-template>
